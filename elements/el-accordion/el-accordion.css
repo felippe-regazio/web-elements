@@ -1,0 +1,37 @@
+[is="el-accordion"] {
+	display: block;
+}
+[is="el-accordion"] .el-ac-summary {
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: solid 1px #cccccc;
+	cursor: pointer;
+}
+[is="el-accordion"] .el-ac-summary span {
+	padding-right: 28px;
+}
+[is="el-accordion"] .el-ac-summary::after {
+	content: "\276F";
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	transition: all 100ms;
+}
+[is="el-accordion"] .el-ac-content {
+	height: 0;
+	opacity: 0;
+	background: white;
+	overflow-y: hidden;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+[is="el-accordion"][expand] .el-ac-content {
+	opacity: 1;
+	height: auto;
+	padding: 16px;
+}
+[is="el-accordion"][expand] .el-ac-summary::after {
+	transform: rotate(95deg);
+}

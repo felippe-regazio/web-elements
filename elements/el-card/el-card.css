@@ -1,0 +1,26 @@
+[is="el-card"] {
+	transition: var(--transition);
+	box-shadow: var(--box-shadow-a);
+	border-radius: var(--border-radius);
+	margin-bottom: var(--gutter);
+	overflow: hidden;
+	display: inline-block;
+	max-width: 300px;
+	text-decoration: none;
+}
+[is="el-card"] img {
+	display: block;
+	width: 100%;
+	max-height: 100%;
+}
+[is="el-card"] > div {
+	padding: 16px;
+	color: #000000;
+}
+[is="el-card"][href]:hover {
+	transition: var(--transition);
+	box-shadow: var(--box-shadow-b);
+}
+[is="el-card"] + [is="el-card"] {
+	margin-left: 10px;
+}
