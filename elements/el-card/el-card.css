@@ -1,8 +1,7 @@
 [is="el-card"] {
-	transition: var(--transition);
-	box-shadow: var(--box-shadow-a);
-	border-radius: var(--border-radius);
-	margin-bottom: var(--gutter);
+	transition: 100ms;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	margin-bottom: 16px;
 	overflow: hidden;
 	display: inline-block;
 	max-width: 300px;
@@ -18,8 +17,8 @@
 	color: #000000;
 }
 [is="el-card"][href]:hover {
-	transition: var(--transition);
-	box-shadow: var(--box-shadow-b);
+	transition: 100ms;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 [is="el-card"] + [is="el-card"] {
 	margin-left: 10px;
