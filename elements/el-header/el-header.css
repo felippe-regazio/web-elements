@@ -1,0 +1,12 @@
+[is="el-header"] {
+	top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  background-color: #f1f1f1;
+}
+[is="el-header"].has-padding,
+[is="el-header"] .has-padding {
+	padding: 16px;
+}

@@ -1,8 +1,8 @@
 (function () {
 
   class ElCard extends HTMLDivElement {
-    
-    constructor() {
+
+    constructor () {
       super();
     }
   }
