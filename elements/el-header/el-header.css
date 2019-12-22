@@ -4,9 +4,15 @@
   width: 100%;
   z-index: 10;
   position: fixed;
+	transition: 100ms;
+	padding: 16px;
   background-color: #f1f1f1;
 }
 [is="el-header"].has-padding,
 [is="el-header"] .has-padding {
 	padding: 16px;
+}
+[is="el-header"].hidden {
+	transition: 100ms;
+	transform: translateY(-100%);
 }

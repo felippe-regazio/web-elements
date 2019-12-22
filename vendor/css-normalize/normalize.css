@@ -3,10 +3,6 @@
 /* Document
    ========================================================================== */
 
-html, body * {
-  box-sizing: border-box;
-}
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -23,6 +19,10 @@ html {
 /**
  * Remove the margin in all browsers.
  */
+
+body * {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;

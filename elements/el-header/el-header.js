@@ -1,29 +1,36 @@
 (function () {
 
-  class ElHeader extends HTMLElement {
+	class ElHeader extends HTMLElement {
 
-    constructor () {
-      super();
-    }
+		constructor () {
+			super();
+		}
 
-    connectedCallback () {
-    	this.applyStyle();
-    }
+		connectedCallback () {
 
-    applyStyle () {
+			this.applyStyle();
 
-    	let sticky = this.hasAttribute('sticky');
-
-			if (sticky) {
-				this.style.position = 'sticky';
-				this.parentElement.style.position = 'relative';
+			if (this.hasAttribute('autohide')) {
+				this.autohide();
 			}
+		}
 
-			if (this.offsetHeight && !sticky) {
+		applyStyle () {
+			if (this.offsetHeight) {
+				this.parentElement.style.position = 'relative';
 				this.parentElement.style.paddingTop = `${this.offsetHeight}px`;
 			}
-    }
-  }
+		}
 
-  window.customElements.define('el-header', ElHeader, {extends: 'header'});
+		autohide () {
+			this.prevScrollpos = window.pageYOffset;
+			window.addEventListener('scroll', () => {
+				let currentScrollPos = window.pageYOffset;
+				this.classList[this.prevScrollpos > currentScrollPos ? 'remove' : 'add']('hidden');
+				this.prevScrollpos = currentScrollPos;
+			});
+		}
+	}
+
+	window.customElements.define('el-header', ElHeader, {extends: 'header'});
 })();
