@@ -14,5 +14,6 @@
 }
 [is="el-header"].hidden {
 	transition: 100ms;
+	transition-delay: 500ms;
 	transform: translateY(-100%);
 }

@@ -1,11 +1,5 @@
-(function () {
-
-  class ElCard extends HTMLDivElement {
-
-    constructor () {
-      super();
-    }
-  }
-
-  window.customElements.define('el-card', ElCard, {extends: 'div'});
-})();
+window.customElements.define('el-card', class extends HTMLDivElement {
+	constructor () {
+		super();
+	}
+}, {extends: 'div'});

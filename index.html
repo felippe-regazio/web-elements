@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="elements/el-lightbox/el-lightbox.css">
     <link rel="stylesheet" type="text/css" href="elements/el-header/el-header.css">
     <link rel="stylesheet" type="text/css" href="elements/el-sidebar/el-sidebar.css">
+    <link rel="stylesheet" type="text/css" href="elements/el-lazyimg/el-lazyimg.css">
 
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <style type="text/css"> body {padding: 10px; font-family: Helvetica;} </style>
@@ -84,7 +85,7 @@
       <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
     </div>
 
-    <div is="el-accordion" summary="Accordion Test 3">
+    <div is="el-accordion" summary="Accordion Test 3" expand>
       <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
     </div>
 
@@ -330,11 +331,27 @@
         });
     </script>
 
+    <br/><br/>
+    <h2>Lazy Image</h2>
+
+    <style type="text/css">
+        .lazy-load-img-example {
+            max-width: 300px;
+        }
+        .lazy-load-img-example img {
+            max-width: 100%;
+        }
+    </style>
+    <div class='lazy-load-img-example'>
+        <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000" blur>
+    </div>
+
     <script defer src="vendor/polyfill-built-in-element/min.js"></script>
     <script defer src="elements/el-card/el-card.js"></script>
     <script defer src="elements/el-accordion/el-accordion.js"></script>
     <script defer src="elements/el-lightbox/el-lightbox.js"></script>
     <script defer src="elements/el-header/el-header.js"></script>
     <script defer src="elements/el-sidebar/el-sidebar.js"></script>
+    <script defer src="elements/el-lazyimg/el-lazyimg.js"></script>
   </body>
 </html>

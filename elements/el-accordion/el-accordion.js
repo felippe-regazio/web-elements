@@ -1,53 +1,48 @@
-(function () {
+window.customElements.define('el-accordion', class extends HTMLDivElement {
 
-  class ElAccordion extends HTMLDivElement {
-    
-    constructor() {
-      super();
-    }
+	constructor () {
+		super();
+	}
 
-	  static get observedAttributes() {
-	    return ['summary'];
-	  }
+	static get observedAttributes () {
+		return ['summary'];
+	}
 
-	  attributeChangedCallback(name, oldVal, newVal) {
-	  	this[name] = newVal;
-	  	const func = `update${name.charAt(0).toUpperCase() + name.slice(1)}`;
-	  	if (typeof this[func] === 'function') this[func](newVal);
-	  }
+	attributeChangedCallback(name, oldVal, newVal) {
+		this[name] = newVal;
+		const func = `update${name.charAt(0).toUpperCase() + name.slice(1)}`;
+		if (typeof this[func] === 'function') this[func](newVal);
+	}
 
-	  connectedCallback () {
-	    
-	    const template = `
-	    	<div class="el-ac-summary">
-	    		<span>
-	    			${this.summary}
-	    		</span>
-	    	</div>
-	    	<div class="el-ac-content">
-	    		${this.innerHTML}
-	    	</div>
-	    `;
+	connectedCallback () {
 
-	    this.innerHTML = template;
-	    
-	    this.querySelector('.el-ac-summary').addEventListener('click', e => {
-	    	e.preventDefault();
-	    	this.toggleAccordion();
-	    });
-	  }
+		const template = `
+		<div class="el-ac-summary">
+		<span>
+		${this.summary}
+		</span>
+		</div>
+		<div class="el-ac-content">
+		${this.innerHTML}
+		</div>
+		`;
 
-	  updateSummary (value) {
-	  	this.summary = value;
-	  	const $summary = this.querySelector('.el-ac-summary');
-	  	if ($summary) $summary.innerHTML = value;
-	  }
+		this.innerHTML = template;
 
-	  toggleAccordion () {
-	  	const attr = 'expand';
-	  	this.hasAttribute(attr) ? this.removeAttribute(attr) : this.setAttribute(attr, true);
-	  }
-  }
+		this.querySelector('.el-ac-summary').addEventListener('click', e => {
+			e.preventDefault();
+			this.toggleAccordion();
+		});
+	}
 
-  window.customElements.define('el-accordion', ElAccordion, {extends: 'div'});
-})();
+	updateSummary (value) {
+		this.summary = value;
+		const $summary = this.querySelector('.el-ac-summary');
+		if ($summary) $summary.innerHTML = value;
+	}
+
+	toggleAccordion () {
+		const attr = 'expand';
+		this.hasAttribute(attr) ? this.removeAttribute(attr) : this.setAttribute(attr, true);
+	}
+}, {extends: 'div'});
