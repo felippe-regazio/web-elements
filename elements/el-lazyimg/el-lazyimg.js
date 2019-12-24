@@ -13,7 +13,7 @@ window.customElements.define('el-lazyimg', class extends HTMLImageElement {
 	}
 
 	validate () {
-		return this.src && this.dataset.src;
+		return this.src && this.dataset.src || this.srcset && this.dataset.srcset;
 	}
 
 	addErrorHandle () {

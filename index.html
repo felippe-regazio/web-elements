@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="elements/el-header/el-header.css">
     <link rel="stylesheet" type="text/css" href="elements/el-sidebar/el-sidebar.css">
     <link rel="stylesheet" type="text/css" href="elements/el-lazyimg/el-lazyimg.css">
+    <link rel="stylesheet" type="text/css" href="elements/el-imgview/el-imgview.css">
 
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <style type="text/css"> body {padding: 10px; font-family: Helvetica;} </style>
@@ -335,15 +336,23 @@
     <h2>Lazy Image</h2>
 
     <style type="text/css">
-        .lazy-load-img-example {
+        .image-example {
             max-width: 300px;
         }
-        .lazy-load-img-example img {
+        .image-example img {
             max-width: 100%;
         }
     </style>
-    <div class='lazy-load-img-example'>
-        <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000" blur>
+
+    <div class='image-example'>
+        <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000" blur/>
+    </div>
+
+    <br/><br/>
+    <h2>Image View</h2>
+
+    <div class='image-example'>
+        <img is="el-imgview" src="http://picsum.photos/id/180/300" data-view="http://picsum.photos/id/180/5000"/>
     </div>
 
     <script defer src="vendor/polyfill-built-in-element/min.js"></script>
@@ -353,5 +362,6 @@
     <script defer src="elements/el-header/el-header.js"></script>
     <script defer src="elements/el-sidebar/el-sidebar.js"></script>
     <script defer src="elements/el-lazyimg/el-lazyimg.js"></script>
+    <script defer src="elements/el-imgview/el-imgview.js"></script>
   </body>
 </html>
