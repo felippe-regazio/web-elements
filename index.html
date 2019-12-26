@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="elements/el-sidebar/el-sidebar.css">
     <link rel="stylesheet" type="text/css" href="elements/el-lazyimg/el-lazyimg.css">
     <link rel="stylesheet" type="text/css" href="elements/el-imgview/el-imgview.css">
+    <link rel="stylesheet" type="text/css" href="elements/el-mustache/el-mustache.css">
 
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <style type="text/css"> body {padding: 10px; font-family: Helvetica;} </style>
@@ -49,30 +50,32 @@
 
     <h2>Card</h2>
 
-    <a is="el-card" href="/" onclick="lightbox1('open'); return false">
-      <img src="http://picsum.photos/300">
+    <a href="">
+        <div is="el-card" href="/" onclick="lightbox1('open'); return false">
+          <img src="http://picsum.photos/300">
+          <div>
+            <h4>Card Title</h4>
+            <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
+          </div>
+        </div>
+    </a>
+
+    <div is="el-card">
+      <img src="http://picsum.photos/500">
       <div>
         <h4>Card Title</h4>
         <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
       </div>
-    </a>
+    </div>
 
-    <a is="el-card" href="/">
-      <img src="http://picsum.photos/300">
+
+    <div is="el-card">
+      <img src="http://picsum.photos/700">
       <div>
         <h4>Card Title</h4>
         <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
       </div>
-    </a>
-
-
-    <a is="el-card" href="/">
-      <img src="http://picsum.photos/300">
-      <div>
-        <h4>Card Title</h4>
-        <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
-      </div>
-    </a>
+    </div>
 
     <!--  -->
 
@@ -355,7 +358,28 @@
         <img is="el-imgview" src="http://picsum.photos/id/180/300" data-view="http://picsum.photos/id/180/5000"/>
     </div>
 
+    <br/><br/>
+    <h2>Mustache Element</h2>
+
+    <div is="el-card">
+        <div is="el-mustache" data-json='https://restcountries.eu/rest/v2/alpha/col' mock lazy>
+            <h1>{{name}} {{alpha2Code}}</h1>
+            <h4>Capital {{capital}}</h4>
+        </div>
+    </div>
+
+    <div is="el-card">
+        <div is="el-mustache" data-json='{"name":"Brasil", "alpha2Code":"BR", "capital":"Brasília"}' mock>
+            <h1>{{name}} {{alpha2Code}}</h1>
+            <h4>Capital {{capital}}</h4>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+
     <script defer src="vendor/polyfill-built-in-element/min.js"></script>
+    <script defer src="vendor/mustache-js/mustache.min.js"></script>
+
     <script defer src="elements/el-card/el-card.js"></script>
     <script defer src="elements/el-accordion/el-accordion.js"></script>
     <script defer src="elements/el-lightbox/el-lightbox.js"></script>
@@ -363,5 +387,6 @@
     <script defer src="elements/el-sidebar/el-sidebar.js"></script>
     <script defer src="elements/el-lazyimg/el-lazyimg.js"></script>
     <script defer src="elements/el-imgview/el-imgview.js"></script>
+    <script defer src="elements/el-mustache/el-mustache.js"></script>
   </body>
 </html>

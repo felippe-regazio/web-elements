@@ -1,19 +1,19 @@
 [is="el-card"] {
+	min-width: 300px;
 	transition: 100ms;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	margin-bottom: 16px;
 	overflow: hidden;
-	display: inline-block;
-	max-width: 300px;
-	text-decoration: none;
 	color: #000000;
+	max-width: 400px;
 }
 [is="el-card"] img {
 	display: block;
 	width: 100%;
 	max-height: 100%;
 }
-[is="el-card"] > div {
+[is="el-card"] > div,
+[is="el-card"] > a > div {
 	padding: 16px;
 }
 [is="el-card"][href]:hover {

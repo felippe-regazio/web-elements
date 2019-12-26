@@ -6,7 +6,11 @@ window.customElements.define('el-lightbox', class extends HTMLDivElement {
 
 	connectedCallback () {
 		this.createHandler();
-		this.closeOnBackdropClick();
+		this.addCloseListeners();
+	}
+
+	disconnectedCallback () {
+		window.removeEventListener('keyup', this.$onEscape);
 	}
 
 	createHandler () {
@@ -21,6 +25,7 @@ window.customElements.define('el-lightbox', class extends HTMLDivElement {
 	open () {
 		this.setAttribute('visible', true);
 		this.emmit('lightbox-open');
+		this.focus();
 		document.body.style.overflow = 'hidden';
 	}
 
@@ -40,9 +45,14 @@ window.customElements.define('el-lightbox', class extends HTMLDivElement {
 		document.dispatchEvent(event);
 	}
 
-	closeOnBackdropClick () {
+	addCloseListeners () {
 		this.addEventListener('click', e => {
 			if (e.target === this) this.close();
+		});
+		this.$onEscape = window.addEventListener('keyup', e => {
+			if(e.key === "Escape") {
+				this.close();
+			}
 		});
 	}
 }, {extends: 'div'});

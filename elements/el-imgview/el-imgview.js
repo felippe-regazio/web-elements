@@ -8,6 +8,10 @@ window.customElements.define('el-imgview', class extends HTMLImageElement {
 		this.addEventListener('click', () => this.openView());
 	}
 
+	disconnectedCallback () {
+		window.removeEventListener('keyup', this.$onEscape);
+	}
+
 	openView () {
 		document.body.append(this.createView());
 		document.body.style.overflow = "hidden";
@@ -26,6 +30,8 @@ window.customElements.define('el-imgview', class extends HTMLImageElement {
 		view.append(this.createCloseBtn());
 
 		this.view = view;
+		this.addCloseListeners();
+
 		return this.view;
 	}
 
@@ -39,5 +45,13 @@ window.customElements.define('el-imgview', class extends HTMLImageElement {
 	removeView () {
 		this.view.remove();
 		document.body.style.overflow = "initial";
+	}
+
+	addCloseListeners () {
+		this.$onEscape = window.addEventListener('keyup', e => {
+			if(e.key === "Escape") {
+				this.removeView();
+			}
+		});
 	}
 }, {extends: 'img'});

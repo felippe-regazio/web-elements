@@ -6,8 +6,12 @@ window.customElements.define('el-sidebar', class extends HTMLDivElement {
 
 	connectedCallback () {
 		this.createHandler();
-		this.closeOnBackdropClick();
+		this.addCloseListeners();
 		this.closeOnSwipe();
+	}
+
+	disconnectedCallback () {
+		window.removeEventListener('keyup', this.$onEscape);
 	}
 
 	createHandler () {
@@ -41,9 +45,14 @@ window.customElements.define('el-sidebar', class extends HTMLDivElement {
 		document.dispatchEvent(event);
 	}
 
-	closeOnBackdropClick () {
+	addCloseListeners () {
 		this.addEventListener('click', e => {
 			if (e.target === this) this.close();
+		});
+		this.$onEscape = window.addEventListener('keyup', e => {
+			if(e.key === "Escape") {
+				this.close();
+			}
 		});
 	}
 

@@ -32,17 +32,19 @@ window.customElements.define('el-lazyimg', class extends HTMLImageElement {
 			this.intersectionStrategy();
 		} else {
 			this.onScrollStrategy();
+			this.loadIfVisible();
 		}
-		// call a lazy load verification then to see if
-		// the image is already on viewport, if yes, it
-		// will be loaded and the events will be removed
-		this.lazyLoad();
 	}
 
 	onScrollStrategy () {
 		this.$onscroll = window.addEventListener('scroll', e => {
 			setTimeout(() => {
-				this.lazyLoad();
+				this.loadIfVisible();
+			}, 1);
+		});
+		this.$onresize = window.addEventListener('resize', e => {
+			setTimeout(() => {
+				this.loadIfVisible();
 			}, 1);
 		});
 	}
@@ -50,14 +52,14 @@ window.customElements.define('el-lazyimg', class extends HTMLImageElement {
 	intersectionStrategy () {
 		const o_o = new IntersectionObserver((entries, observer) => {
 			if (entries[0].isIntersecting) {
-				this.lazyLoad();
+				this.loadImage();
 				o_o.unobserve(this);
 			}
 		});
 		o_o.observe(this);
 	}
 
-	lazyLoad () {
+	loadIfVisible () {
 		if (!this.hasAttribute('loaded') && !this.hasAttribute('loading') && this.isInViewport(this)) {
 			this.loadImage();
 		}
@@ -79,6 +81,7 @@ window.customElements.define('el-lazyimg', class extends HTMLImageElement {
 
 	removeEvents () {
 		if (this.$onscroll) window.removeEventListener('scroll', this.$onscroll);
+		if (this.$onresize) window.removeEventListener('scroll', this.$onresize);
 	}
 
 	unblur () {

@@ -13,13 +13,13 @@
 }
 .el-imgview-view::after {
 	content: attr(data-view-loading-text);
-  color: #444;
+  color: #fff;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
-  font-size: 26px;
+  font-size: 46px;
   /*animation*/
 	text-decoration: blink;
 	-webkit-animation-name: blinker;
