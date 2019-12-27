@@ -2,20 +2,20 @@
 <html>
   <head>
 
-    <title>Web Component</title>
+    <title>Web Elements</title>
 
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" type="text/css" href="vendor/css-normalize/normalize.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-card/el-card.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-accordion/el-accordion.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-lightbox/el-lightbox.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-header/el-header.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-sidebar/el-sidebar.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-lazyimg/el-lazyimg.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-imgview/el-imgview.css">
-    <link rel="stylesheet" type="text/css" href="elements/el-mustache/el-mustache.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-card/el-card.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-accordion/el-accordion.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-lightbox/el-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-header/el-header.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-sidebar/el-sidebar.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-lazyimg/el-lazyimg.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-imgview/el-imgview.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-mustache/el-mustache.css">
 
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <style type="text/css"> body {padding: 10px; font-family: Helvetica;} </style>
@@ -50,24 +50,24 @@
 
     <h2>Card</h2>
 
-    <a href="">
-        <div is="el-card" href="/" onclick="lightbox1('open'); return false">
-          <img src="http://picsum.photos/300">
-          <div>
-            <h4>Card Title</h4>
-            <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
-          </div>
-        </div>
-    </a>
 
-    <div is="el-card">
-      <img src="http://picsum.photos/500">
+    <div is="el-card" onclick="lightbox1('open'); return false" hoverble>
+      <img src="http://picsum.photos/300">
       <div>
-        <h4>Card Title</h4>
+        <h4>This will open a lightbox</h4>
         <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
       </div>
     </div>
 
+    <a href="">
+        <div is="el-card">
+          <img src="http://picsum.photos/500">
+          <div>
+            <h4>This one is a link</h4>
+            <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
+          </div>
+        </div>
+    </a>
 
     <div is="el-card">
       <img src="http://picsum.photos/700">
@@ -380,13 +380,13 @@
     <script defer src="vendor/polyfill-built-in-element/min.js"></script>
     <script defer src="vendor/mustache-js/mustache.min.js"></script>
 
-    <script defer src="elements/el-card/el-card.js"></script>
-    <script defer src="elements/el-accordion/el-accordion.js"></script>
-    <script defer src="elements/el-lightbox/el-lightbox.js"></script>
-    <script defer src="elements/el-header/el-header.js"></script>
-    <script defer src="elements/el-sidebar/el-sidebar.js"></script>
-    <script defer src="elements/el-lazyimg/el-lazyimg.js"></script>
-    <script defer src="elements/el-imgview/el-imgview.js"></script>
-    <script defer src="elements/el-mustache/el-mustache.js"></script>
+    <script defer src="dist/el-card/el-card.js"></script>
+    <script defer src="dist/el-accordion/el-accordion.js"></script>
+    <script defer src="dist/el-lightbox/el-lightbox.js"></script>
+    <script defer src="dist/el-header/el-header.js"></script>
+    <script defer src="dist/el-sidebar/el-sidebar.js"></script>
+    <script defer src="dist/el-lazyimg/el-lazyimg.js"></script>
+    <script defer src="dist/el-imgview/el-imgview.js"></script>
+    <script defer src="dist/el-mustache/el-mustache.js"></script>
   </body>
 </html>

@@ -1,0 +1,1 @@
+[is=el-header]{top:0;left:0;width:100%;z-index:10;position:fixed;transition:.1s;padding:16px;background-color:#f1f1f1}[is=el-header] .has-padding,[is=el-header].has-padding{padding:16px}[is=el-header].hidden{transition:.1s;transition-delay:.5s;transform:translateY(-100%)}
