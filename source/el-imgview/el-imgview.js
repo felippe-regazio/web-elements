@@ -1,4 +1,4 @@
-window.customElements.define('el-imgview', class extends HTMLImageElement {
+customElements.define('el-imgview', class extends HTMLImageElement {
 
 	constructor () {
 		super();
@@ -37,7 +37,7 @@ window.customElements.define('el-imgview', class extends HTMLImageElement {
 
 	createCloseBtn () {
 		const close = document.createElement('div');
-		close.classList.add('el-imageview-view__close');
+		close.classList.add('el-imgview-view__close');
 		close.addEventListener('click', () => this.view.remove());
 		return close;
 	}

@@ -1,52 +1,58 @@
 /* default */
-[is="el-mustache"]:not([preserve-height]):not([loaded]) * {
-	display: none;
-}
-/* preserve-height */
-[is="el-mustache"][preserve-height]:not([loaded]) * {
-	opacity: 0;
-	visibility: hidden;
-}
-/* mock */
-[is="el-mustache"][mock]:not([loaded]) * {
-	display: none;
-}
-[is="el-mustache"][mock]:not([loaded]) {
-	text-decoration: blink;
-	-webkit-animation-name: blinker;
-	-webkit-animation-duration: 600ms;
-	-webkit-animation-iteration-count:infinite;
-	-webkit-animation-timing-function:ease-in-out;
-	-webkit-animation-direction: alternate;
-}
-/* mock elements (lines) */
-[is="el-mustache"][mock]:not([loaded])::after,
-[is="el-mustache"][mock]:not([loaded])::before {
-	content: "";
-	display: block;
-	width: 100%;
-	padding: 10px 0;
-	opacity: .5;
-}
-/* mock default */
-[is="el-mustache"][mock]:not([loaded])::before {
-	border-top: solid 46px #cccccc;
-	border-bottom: solid 18px #cccccc;
-}
-/* mock = medium */
-[is="el-mustache"][mock="medium"]:not([loaded])::after {
-	border-bottom: solid 18px #cccccc;
-}
-/* mock = large" */
-[is="el-mustache"][mock="large"]:not([loaded])::before {
-	margin-bottom: 18px;
-	border-bottom: solid 80px #cccccc;
-}
-[is="el-mustache"][mock="large"]:not([loaded])::after {
-	border-top: solid 18px #cccccc;
-	border-bottom: solid 18px #cccccc;
-}
-@-webkit-keyframes blinker {
-	from {opacity: .8;}
-	to {opacity: .4;}
+[is="el-mustache"] {
+	&:not([preserve-height]):not([loaded]) * {
+		display: none;
+	}
+	/* preserve-height */
+	&[preserve-height]:not([loaded]) * {
+		opacity: 0;
+		visibility: hidden;
+	}
+	/* mock */
+	&[mock]:not([loaded]) {
+		text-decoration: blink;
+		animation-name: blinker;
+		animation-duration: 600ms;
+		animation-iteration-count:infinite;
+		animation-timing-function:ease-in-out;
+		animation-direction: alternate;
+		* {
+			display: none;
+		}
+		&::after,
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			padding: 10px 0;
+			opacity: .5;
+		}
+	}
+	/* mock default */
+	&[mock]:not([loaded]),
+	&[mock="small"]:not([loaded]) {
+		&::before {
+			border-top: solid 46px #cccccc;
+			border-bottom: solid 18px #cccccc;
+		}
+	}
+	/* mock = medium */
+	&[mock="medium"]:not([loaded])::after {
+		border-bottom: solid 18px #cccccc;
+	}
+	/* mock = large" */
+	&[mock="large"]:not([loaded]) {
+		&::before {
+			margin-bottom: 18px;
+			border-bottom: solid 80px #cccccc;
+		}
+		&::after {
+			border-top: solid 18px #cccccc;
+			border-bottom: solid 18px #cccccc;
+		}
+	}
+	@keyframes blinker {
+		from {opacity: .8;}
+		to {opacity: .4;}
+	}
 }

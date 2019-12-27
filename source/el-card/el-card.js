@@ -1,4 +1,4 @@
-window.customElements.define('el-card', class extends HTMLDivElement {
+customElements.define('el-card', class extends HTMLDivElement {
 
 	constructor () {
 		super();

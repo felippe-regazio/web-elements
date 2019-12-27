@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="dist/el-lazyimg/el-lazyimg.css">
     <link rel="stylesheet" type="text/css" href="dist/el-imgview/el-imgview.css">
     <link rel="stylesheet" type="text/css" href="dist/el-mustache/el-mustache.css">
+    <link rel="stylesheet" type="text/css" href="dist/el-spinner/el-spinner.css">
 
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <style type="text/css"> body {padding: 10px; font-family: Helvetica;} </style>
@@ -362,9 +363,15 @@
     <h2>Mustache Element</h2>
 
     <div is="el-card">
-        <div is="el-mustache" data-json='https://restcountries.eu/rest/v2/alpha/col' mock lazy>
+        <div is="el-mustache" data-json='https://restcountries.eu/rest/v2/alpha/col' mock="large" lazy>
             <h1>{{name}} {{alpha2Code}}</h1>
             <h4>Capital {{capital}}</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </div>
 
@@ -374,6 +381,11 @@
             <h4>Capital {{capital}}</h4>
         </div>
     </div>
+
+    <br/><br/>
+    <h2>Spinners</h2>
+
+    <div is="el-spinner"></div>
 
     <!-- SCRIPTS -->
 
@@ -388,5 +400,6 @@
     <script defer src="dist/el-lazyimg/el-lazyimg.js"></script>
     <script defer src="dist/el-imgview/el-imgview.js"></script>
     <script defer src="dist/el-mustache/el-mustache.js"></script>
+    <script defer src="dist/el-spinner/el-spinner.js"></script>
   </body>
 </html>

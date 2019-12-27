@@ -1,0 +1,1 @@
+"use strict";var gulp=require("gulp"),sass=require("gulp-ruby-sass");gulp.task("css",function(){return sass("sass/",{style:"expanded",compass:!0}).pipe(gulp.dest("css"))}),gulp.task("watch",function(){gulp.watch("sass/**/*.scss",["css"])});

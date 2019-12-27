@@ -10,63 +10,63 @@
 	width: 100%;
 	overflow: hidden;
 	background-color: #000000;
-}
-.el-imgview-view::after {
-	content: attr(data-view-loading-text);
-  color: #fff;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
-  font-size: 46px;
-  /*animation*/
-	text-decoration: blink;
-	-webkit-animation-name: blinker;
-	-webkit-animation-duration: 1s;
-	-webkit-animation-iteration-count:infinite;
-	-webkit-animation-timing-function:ease-in-out;
-	-webkit-animation-direction: alternate;
-}
-.el-imgview-view__image {
-	height: 100%;
-	z-index: 1;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	max-width: 1000px;
-	position: relative;
-	margin: 0 auto;
-}
-.el-imageview-view__close {
-	position: fixed;
-	top: 10px;
-  z-index: 2;
-	right: 10px;
-	width: 32px;
-  height: 34px;
-  opacity: .5;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000000;
-}
-.el-imageview-view__close:before,
-.el-imageview-view__close:after {
-  position: absolute;
-  left: 15px;
-  content: ' ';
-  height: 33px;
-  width: 2px;
-  background-color: #888;
-}
-.el-imageview-view__close:before {
-  transform: rotate(45deg);
-}
-.el-imageview-view__close:after {
-  transform: rotate(-45deg);
-}
-@-webkit-keyframes blinker {
-	from {opacity: 1.0;}
-	to {opacity: 0.0;}
+	&::after {
+		content: attr(data-view-loading-text);
+	  color: #fff;
+	  position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  z-index: 0;
+	  font-size: 46px;
+	  /*animation*/
+		text-decoration: blink;
+		animation-name: blinker;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+		animation-direction: alternate;
+	}
+	&__image {
+		height: 100%;
+		z-index: 1;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		max-width: 1000px;
+		position: relative;
+		margin: 0 auto;
+	}
+	&__close {
+		position: fixed;
+		top: 10px;
+	  z-index: 2;
+		right: 10px;
+		width: 32px;
+	  height: 34px;
+	  opacity: .5;
+	  display: inline-flex;
+	  align-items: center;
+	  justify-content: center;
+	  background-color: #000000;
+		&:before,
+		&:after {
+		  position: absolute;
+		  left: 15px;
+		  content: ' ';
+		  height: 33px;
+		  width: 2px;
+		  background-color: #888;
+		}
+		&:before {
+		  transform: rotate(45deg);
+		}
+		&:after {
+		  transform: rotate(-45deg);
+		}
+	}
+	@keyframes blinker {
+		from {opacity: 1.0;}
+		to {opacity: 0.0;}
+	}
 }

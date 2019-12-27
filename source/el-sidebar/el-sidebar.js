@@ -1,4 +1,4 @@
-window.customElements.define('el-sidebar', class extends HTMLDivElement {
+customElements.define('el-sidebar', class extends HTMLDivElement {
 
 	constructor() {
 		super();

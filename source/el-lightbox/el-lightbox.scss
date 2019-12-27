@@ -1,4 +1,4 @@
-[is="el-lightbox"] {
+[is="el-lightbox"]{
 	top: 0;
 	left: 0;
 	z-index: 1000;
@@ -11,36 +11,36 @@
 	justify-content: center;
 	overflow: hidden;
 	display: none;
-}
-[is="el-lightbox"] > section {
-	width: 90%;
-	height: 90vh;
-	overflow: hidden;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	background-color: #ffffff;
-}
-[is="el-lightbox"][boxed] > section {
-	max-height: 500px;
-	max-width: 800px;
-}
-[is="el-lightbox"] > section > header,
-[is="el-lightbox"] > section > footer {
-	min-height: 50px;
-	background-color: #f1f1f1;
-	padding: 16px;
-	display: flex;
-	align-items: center;
-}
-[is="el-lightbox"] > section > footer {
-	justify-content: flex-end;
-}
-[is="el-lightbox"] > section > div {
-	overflow: auto;
-	flex: 1;
-	padding: 16px;
-}
-[is="el-lightbox"][visible] {
-	display: flex;
+	> section {
+		width: 90%;
+		height: 90vh;
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		background-color: #ffffff;
+		> header,
+		> footer {
+			min-height: 50px;
+			background-color: #f1f1f1;
+			padding: 16px;
+			display: flex;
+			align-items: center;
+		}
+		> footer {
+			justify-content: flex-end;
+		}
+		> div {
+			overflow: auto;
+			flex: 1;
+			padding: 16px;
+		}
+	}
+	&[boxed] > section {
+		max-height: 500px;
+		max-width: 800px;
+	}
+	&[visible] {
+		display: flex;
+	}
 }

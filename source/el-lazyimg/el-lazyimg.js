@@ -1,4 +1,4 @@
-window.customElements.define('el-lazyimg', class extends HTMLImageElement {
+customElements.define('el-lazyimg', class extends HTMLImageElement {
 
 	constructor () {
 		super();

@@ -1,1 +1,1 @@
-[is=el-lazyimg][blur]:not([loaded]){filter:blur(3px)}[is=el-lazyimg][loading]{transition:.4s}
+[is=el-lazyimg][blur]:not([loaded]){-webkit-filter:blur(3px);filter:blur(3px)}[is=el-lazyimg][loading]{-webkit-transition:.4s;transition:.4s}

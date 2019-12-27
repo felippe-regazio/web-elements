@@ -1,4 +1,4 @@
-window.customElements.define('el-accordion', class extends HTMLDivElement {
+customElements.define('el-accordion', class extends HTMLDivElement {
 
 	constructor () {
 		super();

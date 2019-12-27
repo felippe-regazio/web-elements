@@ -1,4 +1,4 @@
-window.customElements.define('el-lightbox', class extends HTMLDivElement {
+customElements.define('el-lightbox', class extends HTMLDivElement {
 
 	constructor () {
 		super();

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const chalk = require('chalk');
 
@@ -22,7 +24,7 @@ console.log(chalk.green(`Creating "${el_name}" basic structure...`));
 fs.mkdirSync(`${els_dir}/${el_name}`);
 
 
-const js_file = `window.customElements.define('${el_name}', class extends HTMLDivElement {
+const js_file = `customElements.define('${el_name}', class extends HTMLDivElement {
 
 	constructor () {
 		super();
@@ -41,8 +43,8 @@ let files = {
 
 Object.keys(files).forEach((file_name, index) => {
 	const file = `${els_dir}/${el_name}/${file_name}`;
-	fs.writeFile(file, files[file_name], err => {
-		if (err) throw err;
-		console.log(`Created ${file}`);
-	});
+	fs.writeFileSync(file, files[file_name]);
+	console.log(`Created ${file}`);
 });
+
+console.log(chalk.green('Done!\n'));

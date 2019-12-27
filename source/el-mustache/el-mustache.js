@@ -1,4 +1,4 @@
-window.customElements.define('el-mustache', class extends HTMLDivElement {
+customElements.define('el-mustache', class extends HTMLDivElement {
 
 	constructor () {
 		super();

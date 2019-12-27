@@ -1,4 +1,4 @@
-window.customElements.define('el-header', class extends HTMLElement {
+customElements.define('el-header', class extends HTMLElement {
 
 	constructor () {
 		super();

@@ -7,13 +7,12 @@
 	transition: 100ms;
 	padding: 16px;
   background-color: #f1f1f1;
-}
-[is="el-header"].has-padding,
-[is="el-header"] .has-padding {
-	padding: 16px;
-}
-[is="el-header"].hidden {
-	transition: 100ms;
-	transition-delay: 500ms;
-	transform: translateY(-100%);
+	&.has-padding, .has-padding {
+		padding: 16px;
+	}
+	&.hidden {
+		transition: 100ms;
+		transition-delay: 500ms;
+		transform: translateY(-100%);
+	}
 }
