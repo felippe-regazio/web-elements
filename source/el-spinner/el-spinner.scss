@@ -1,0 +1,54 @@
+[is="el-spinner"] {
+	width: 54px;
+	height: 54px;
+	padding: 10px;
+	display: inline-block;
+	&[hidden] {
+		display: none !important;
+	}
+	.el-spinner-main {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+	.el-spinner-main {
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			top: -6px;
+			left: -6px;
+			width: 100%;
+			height: 100%;
+			border-radius: 100%;
+			border: 6px solid transparent;
+			border-top-color: currentColor;
+		}
+		&::before {
+			border: 6px solid rgba(0,0,0,.1);
+		}
+		&::after {
+			z-index: 100;
+			animation: spin 1s infinite;
+		}
+		@keyframes spin {
+			0%{transform: rotate(0deg)}
+			100%{transform: rotate(360deg)}
+		}
+	}
+	&[single] .el-spinner-main {
+		&::before {
+			display: none;
+		}
+	}
+	&[outline] .el-spinner-main {
+		&::before {
+			border-style: double;
+		}
+	}
+	&[outline][single] .el-spinner-main {
+		&::after {
+			border-style: double;
+		}
+	}
+}

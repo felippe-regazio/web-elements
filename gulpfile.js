@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const clean_css = require('gulp-clean-css');
-const cssmin = require('gulp-cssnano');
 const prefix = require('gulp-autoprefixer');
 const uglify_js = require('gulp-uglify');
 const babel = require('gulp-babel');
@@ -13,7 +12,6 @@ gulp.task('styles', function(){
 	.pipe(sass({outputStyle: 'compressed'}))
 	.pipe(clean_css())
 	.pipe(prefix())
-	.pipe(cssmin())
 	.pipe(gulp.dest('./dist'));
 });
 
