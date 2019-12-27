@@ -379,8 +379,30 @@
         <div is="el-mustache" data-json='{"name":"Brasil", "alpha2Code":"BR", "capital":"Brasília"}' mock>
             <h1>{{name}} {{alpha2Code}}</h1>
             <h4>Capital {{capital}}</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
         </div>
     </div>
+
+    <div is="el-card">
+        <div is="el-mustache" data-json='{"name":"Russia", "alpha2Code":"RU", "capital":"Moscou"}' template="el-mustache-example" mock></div>
+    </div>
+
+    <template id="el-mustache-example">
+        <h1>{{name}} {{alpha2Code}}</h1>
+        <h4>Capital {{capital}}</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </template>
 
     <br/><br/>
     <h2>Spinner</h2>

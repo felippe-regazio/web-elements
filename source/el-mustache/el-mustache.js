@@ -68,9 +68,24 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 
 	render (data) {
 		if (!data) data = {};
-		if (!this.$template) this.$template = this.innerHTML;
+		if (!this.$template) this.$template = this.getTemplate();
 		this.innerHTML = Mustache.to_html(this.$template, data);
 		this.loaded();
+	}
+
+	getTemplate () {
+
+		let template = "";
+		const template_id = this.getAttribute('template');
+		const template_el = template_id ? document.getElementById(template_id) : undefined;
+
+		if (template_id && !template_el) {
+			this.error(`The setted template "${template_id}" doesn't exist on the document`);
+			return "";
+		}
+
+		template = template_el ? template_el.innerHTML : this.innerHTML;
+		return template;
 	}
 
 	error (message) {
