@@ -24,7 +24,7 @@ customElements.define('el-header', class extends HTMLElement {
 		this.prevScrollpos = window.pageYOffset;
 		window.addEventListener('scroll', () => {
 			let currentScrollPos = window.pageYOffset;
-			this.classList[this.prevScrollpos > currentScrollPos ? 'remove' : 'add']('hidden');
+			this.classList[this.prevScrollpos > currentScrollPos ? 'remove' : 'add']('el-header--hidden');
 			this.prevScrollpos = currentScrollPos;
 		});
 	}

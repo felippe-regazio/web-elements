@@ -21,12 +21,12 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 			$btn.classList.add(btn_classes.split(' '));
 		}
 
-		$btn.innerText = this.getBtnLabel(false);
 		$btn.addEventListener('click', () => {
 			this.toggle();
 		});
 
 		this.$btn = $btn;
+		this.update();
 		this.append($btn);
 	}
 
@@ -55,7 +55,8 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 	}
 
 	update () {
-		this.$btn.innerText = this.getBtnLabel(this.hasAttribute('expanded'));
+		if (this.$btn)
+			this.$btn.innerHTML = this.getBtnLabel(this.hasAttribute('expanded'));
 	}
 
 	getBtnLabel (expanded) {

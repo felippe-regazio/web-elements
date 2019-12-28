@@ -10,7 +10,7 @@
 	&.has-padding, .has-padding {
 		padding: 16px;
 	}
-	&.hidden {
+	&.el-header--hidden {
 		transition: 100ms;
 		transition-delay: 500ms;
 		transform: translateY(-100%);
