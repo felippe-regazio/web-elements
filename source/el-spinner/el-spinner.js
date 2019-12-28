@@ -10,6 +10,21 @@ customElements.define('el-spinner', class extends HTMLDivElement {
 		this.colorize();
 	}
 
+	static get observedAttributes () {
+		return ['size', 'color'];
+	}
+
+	attributeChangedCallback(name, oldVal, newVal) {
+		switch (name.toLowerCase()) {
+			case 'color':
+				this.colorize();
+			break;
+			case 'size':
+				this.sizefy();
+			break;
+		}
+	}
+
 	sizefy () {
 		let size = this.getAttribute('size');
 		if (size) {
