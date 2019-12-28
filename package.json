@@ -33,6 +33,7 @@
     "chalk": "^3.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2"
   },

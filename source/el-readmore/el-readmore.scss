@@ -1,0 +1,21 @@
+[is="el-readmore"] {
+	ins {
+		text-decoration: none;
+	}
+	&:not([expanded]) {
+		.el-readmore-has-ins::after {
+			content: " ...";
+		}
+		ins {
+			display: none;
+		}
+	}
+	[expanded] {
+		.el-readmore-has-ins::after {
+			display: none;
+		}
+		ins {
+			display: inline;
+		}
+	}
+}
