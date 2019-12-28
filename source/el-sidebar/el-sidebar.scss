@@ -29,7 +29,6 @@
 		}
 		> div {
 			flex: 1;
-			padding: 16px;
 		}
 	}
 	&:not([right]) > section {
@@ -49,5 +48,8 @@
 			transition-delay: 100ms;
 			transform: translateX(0);
 		}
+	}
+	&.has-padding, .has-padding {
+		padding: 16px;
 	}
 }
