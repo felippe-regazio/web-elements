@@ -90,9 +90,8 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 
 	error (message) {
 		this.loaded();
-		if (this.debug()) {
-			console.error(message);
-		}
+		this.execInlineEvent('el-error');
+		if (this.debug()) console.error(message);
 	}
 
 	// ----------------------------------------
@@ -163,6 +162,7 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 
 	loaded () {
 		this.setAttribute('loaded', true);
+		this.execInlineEvent('el-loaded');
 	}
 
 	reset () {
@@ -171,6 +171,11 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 
 	debug () {
 		return this.hasAttribute('debug');
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 
 }, {extends: 'div'});

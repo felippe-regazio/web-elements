@@ -42,6 +42,7 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 		// so the element will respond if "expand"
 		// is manipulated by code either.
 		this.toggleAttribute('expanded');
+		this.execInlineEvent('el-toggle');
 	}
 
 	// ---------------------------------------------
@@ -57,6 +58,10 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 	update () {
 		if (this.$btn)
 			this.$btn.innerHTML = this.getBtnLabel(this.hasAttribute('expanded'));
+		if (this.hasAttribute('expanded'))
+			this.execInlineEvent('el-open');
+		else
+			this.execInlineEvent('el-close');
 	}
 
 	getBtnLabel (expanded) {
@@ -67,5 +72,10 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 		if (!labels || labels.length < 2)
 			labels = _default;
 		return expanded ? labels[1] : labels[0];
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 }, {extends: 'div'});

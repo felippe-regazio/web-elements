@@ -20,7 +20,13 @@
   </head>
   <body>
 
-    <header is="el-header" autohide>Page Header Testing</header>
+    <header is="el-header" autohide el-hide="" data-show="">Page Header Testing</header>
+
+    <script type="text/javascript">
+        document.addEventListener('el-header-show', function (e) {
+            console.log(e);
+        })
+    </script>
 
     <div class="container">
 
@@ -85,9 +91,12 @@
           <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
         </div>
 
-        <div is="el-accordion" summary="Accordion Test 2">
+        <script type="text/javascript">function ex (el) {alert(el.innerHTML)}</script>
+
+        <div is="el-accordion" summary="Accordion Test 2" el-open="ex" el-close="ex">
           <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
         </div>
+
 
         <div is="el-accordion" summary="Accordion Test 3" expand>
           <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
@@ -415,7 +424,7 @@
         <br/><br/>
         <h2>Read More</h2>
 
-        <div is="el-readmore" length="400" label="More|Minus">
+        <div is="el-readmore" length="400" label="More|Minus" el-open="ex">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <ins>
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

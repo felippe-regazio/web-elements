@@ -77,6 +77,8 @@ customElements.define('el-lazyimg', class extends HTMLImageElement {
 		this.setAttribute('loaded', true);
 		this.unblur();
 		this.removeAttribute('loading');
+		this.emmit('el-lazyimg-loaded');
+		this.execInlineEvent('el-loaded');
 	}
 
 	removeEvents () {
@@ -96,5 +98,15 @@ customElements.define('el-lazyimg', class extends HTMLImageElement {
 			rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
 			rect.left <= (window.innerWidth || document.documentElement.clientWidth)
 		);
+	}
+
+	emmit (name) {
+		const event = Object.assign(new CustomEvent(name, {detail: this}), {lazyimg: this});
+		document.dispatchEvent(event);
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 }, {extends: 'img'});

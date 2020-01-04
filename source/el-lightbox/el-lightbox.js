@@ -24,25 +24,23 @@ customElements.define('el-lightbox', class extends HTMLDivElement {
 
 	open () {
 		this.setAttribute('visible', true);
-		this.emmit('lightbox-open');
 		this.focus();
 		document.body.style.overflow = 'hidden';
+		this.emmit('el-lightbox-show');
+		this.execInlineEvent('el-show');
 	}
 
 	close () {
 		this.removeAttribute('visible');
-		this.emmit('lightbox-close');
 		document.body.style.overflow = 'initial';
+		this.emmit('el-lightbox-close');
+		this.execInlineEvent('el-close');
 	}
 
 	toggle () {
 		this.hasAttribute('visible') ? this.close() : this.open();
-		this.emmit('lightbox-toggle');
-	}
-
-	emmit (name) {
-		let event = Object.assign(new CustomEvent(name, {detail: this}), {lightbox: this});
-		document.dispatchEvent(event);
+		this.emmit('el-lightbox-toggle');
+		this.execInlineEvent('el-toggle');
 	}
 
 	addCloseListeners () {
@@ -54,5 +52,15 @@ customElements.define('el-lightbox', class extends HTMLDivElement {
 				this.close();
 			}
 		});
+	}
+
+	emmit (name) {
+		const event = Object.assign(new CustomEvent(name, {detail: this}), {lightbox: this});
+		document.dispatchEvent(event);
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 }, {extends: 'div'});

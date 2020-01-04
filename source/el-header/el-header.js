@@ -21,11 +21,35 @@ customElements.define('el-header', class extends HTMLElement {
 	}
 
 	autohide () {
+		const hidden_class = 'el-header--hidden';
+		const is_hidden = this.classList.contains(hidden_class);
 		this.prevScrollpos = window.pageYOffset;
 		window.addEventListener('scroll', () => {
 			let currentScrollPos = window.pageYOffset;
-			this.classList[this.prevScrollpos > currentScrollPos ? 'remove' : 'add']('el-header--hidden');
+			if (this.prevScrollpos > currentScrollPos) {
+				if (this.classList.contains(hidden_class)) {
+					this.classList.remove(hidden_class);
+					this.emmit('el-header-show');
+					this.execInlineEvent('el-show');
+				}
+			} else {
+				if (!this.classList.contains(hidden_class)) {
+					this.classList.add(hidden_class);
+					this.emmit('el-header-hide');
+					this.execInlineEvent('el-hide');
+				}
+			}
 			this.prevScrollpos = currentScrollPos;
 		});
+	}
+
+	emmit (name) {
+		const event = Object.assign(new CustomEvent(name, {detail: this}), {header: this});
+		document.dispatchEvent(event);
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 }, {extends: 'header'});

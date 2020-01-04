@@ -6,6 +6,7 @@ const uglify_js = require('gulp-uglify');
 const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
+const clean_dir = require('gulp-clean');
 
 const elements = './elements';
 const bundle = './bundle';
@@ -56,7 +57,12 @@ gulp.task('watch', function(done) {
 	}
 });
 
+gulp.task('clean', function(done) {
+	return (process.argv[2] === '--clean') ? gulp.src([bundle, elements]).pipe(clean_dir()) : done();
+});
+
 gulp.task('default', gulp.series([
+	'clean',
 	'styles',
 	'scripts',
 	'bundle-css',

@@ -43,6 +43,24 @@ customElements.define('el-accordion', class extends HTMLDivElement {
 
 	toggleAccordion () {
 		const attr = 'expand';
-		this.hasAttribute(attr) ? this.removeAttribute(attr) : this.setAttribute(attr, true);
+		if (!this.hasAttribute(attr)) {
+			this.setAttribute(attr, true);
+			this.emmit('el-accordion-open');
+			this.execInlineEvent('el-open');
+		} else {
+			this.removeAttribute(attr);
+			this.emmit('el-accordion-close');
+			this.execInlineEvent('el-close');
+		}
+	}
+
+	emmit (name) {
+		const event = Object.assign(new CustomEvent(name, {detail: this}), {accordion: this});
+		document.dispatchEvent(event);
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 }, {extends: 'div'});

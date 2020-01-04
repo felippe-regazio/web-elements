@@ -15,6 +15,8 @@ customElements.define('el-imgview', class extends HTMLImageElement {
 	openView () {
 		document.body.append(this.createView());
 		document.body.style.overflow = "hidden";
+		this.emmit('el-imgview-show');
+		this.execInlineEvent('el-show');
 	}
 
 	createView () {
@@ -45,6 +47,8 @@ customElements.define('el-imgview', class extends HTMLImageElement {
 	removeView () {
 		this.view.remove();
 		document.body.style.overflow = "initial";
+		this.emmit('el-imgview-close');
+		this.execInlineEvent('el-close');
 	}
 
 	addCloseListeners () {
@@ -53,5 +57,15 @@ customElements.define('el-imgview', class extends HTMLImageElement {
 				this.removeView();
 			}
 		});
+	}
+
+	emmit (name) {
+		const event = Object.assign(new CustomEvent(name, {detail: this}), {imgview: this});
+		document.dispatchEvent(event);
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 }, {extends: 'img'});

@@ -25,24 +25,32 @@ customElements.define('el-sidebar', class extends HTMLDivElement {
 
 	open () {
 		this.setAttribute('visible', true);
-		this.emmit('sidebar-open');
+		this.emmit('el-sidebar-show');
+		this.execInlineEvent('el-show');
 		document.body.style.overflow = 'hidden';
 	}
 
 	close () {
 		this.removeAttribute('visible');
-		this.emmit('sidebar-close');
+		this.emmit('el-sidebar-close');
+		this.execInlineEvent('el-close');
 		document.body.style.overflow = 'initial';
 	}
 
 	toggle () {
 		this.hasAttribute('visible') ? this.close() : this.open();
-		this.emmit('sidebar-toggle');
+		this.emmit('el-sidebar-toggle');
+		this.execInlineEvent('el-toggle');
 	}
 
 	emmit (name) {
 		let event = Object.assign(new CustomEvent(name, {detail: this}), {sidebar: this});
 		document.dispatchEvent(event);
+	}
+
+	execInlineEvent (event) {
+		if(!this.getAttribute(event)) return null;
+		window[this.getAttribute(event).split('(')[0].trim()](this);
 	}
 
 	addCloseListeners () {
