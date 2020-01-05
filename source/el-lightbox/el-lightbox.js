@@ -23,24 +23,24 @@ customElements.define('el-lightbox', class extends HTMLDivElement {
 	}
 
 	open () {
-		this.setAttribute('visible', true);
+		this.setAttribute('data-visible', true);
 		this.focus();
 		document.body.style.overflow = 'hidden';
 		this.emmit('el-lightbox-show');
-		this.execInlineEvent('el-show');
+		this.execInlineEvent('data-on:show');
 	}
 
 	close () {
-		this.removeAttribute('visible');
+		this.removeAttribute('data-visible');
 		document.body.style.overflow = 'initial';
 		this.emmit('el-lightbox-close');
-		this.execInlineEvent('el-close');
+		this.execInlineEvent('data-on:close');
 	}
 
 	toggle () {
-		this.hasAttribute('visible') ? this.close() : this.open();
+		this.hasAttribute('data-visible') ? this.close() : this.open();
 		this.emmit('el-lightbox-toggle');
-		this.execInlineEvent('el-toggle');
+		this.execInlineEvent('data-on:toggle');
 	}
 
 	addCloseListeners () {

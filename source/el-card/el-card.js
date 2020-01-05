@@ -7,7 +7,7 @@ customElements.define('el-card', class extends HTMLDivElement {
 	connectedCallback () {
 		if (this.parentElement.tagName.toUpperCase() === 'A') {
 			this.parentElement.style.textDecoration = 'none';
-			this.setAttribute('hoverble', true);
+			this.setAttribute('data-hoverble', true);
 		}
 	}
 }, {extends: 'div'});

@@ -11,22 +11,22 @@ customElements.define('el-spinner', class extends HTMLDivElement {
 	}
 
 	static get observedAttributes () {
-		return ['size', 'color'];
+		return ['data-size', 'data-color'];
 	}
 
 	attributeChangedCallback(name, oldVal, newVal) {
 		switch (name.toLowerCase()) {
-			case 'color':
+			case 'data-color':
 				this.colorize();
 			break;
-			case 'size':
+			case 'data-size':
 				this.sizefy();
 			break;
 		}
 	}
 
 	sizefy () {
-		let size = this.getAttribute('size');
+		let size = this.getAttribute('data-size');
 		if (size) {
 			if(+size) size = `${size}px`;
 			this.style.width = size;
@@ -41,8 +41,8 @@ customElements.define('el-spinner', class extends HTMLDivElement {
 	}
 
 	colorize () {
-		if (this.hasAttribute('color')) {
-			this.style.color = this.getAttribute('color');
+		if (this.hasAttribute('data-color')) {
+			this.style.color = this.getAttribute('data-color');
 		}
 	}
 }, {extends: 'div'});

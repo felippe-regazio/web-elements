@@ -2,7 +2,7 @@
 	ins {
 		text-decoration: none;
 	}
-	&:not([expanded]) {
+	&:not([data-expanded]) {
 		.el-readmore-has-ins::after {
 			content: " ...";
 		}
@@ -10,7 +10,7 @@
 			display: none;
 		}
 	}
-	[expanded] {
+	[data-expanded] {
 		.el-readmore-has-ins::after {
 			display: none;
 		}

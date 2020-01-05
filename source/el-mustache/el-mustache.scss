@@ -1,15 +1,15 @@
 /* default */
 [is="el-mustache"] {
-	&:not([preserve-height]):not([loaded]) * {
+	&:not([data-preserve-height]):not([data-loaded]) * {
 		display: none;
 	}
 	/* preserve-height */
-	&[preserve-height]:not([loaded]) * {
+	&[data-preserve-height]:not([data-loaded]) * {
 		opacity: 0;
 		visibility: hidden;
 	}
 	/* mock */
-	&[mock]:not([loaded]) {
+	&[data-mock]:not([data-loaded]) {
 		text-decoration: blink;
 		animation-name: blinker;
 		animation-duration: 600ms;
@@ -29,19 +29,19 @@
 		}
 	}
 	/* mock default */
-	&[mock]:not([loaded]),
-	&[mock="small"]:not([loaded]) {
+	&[data-mock]:not([data-loaded]),
+	&[data-mock="small"]:not([data-loaded]) {
 		&::before {
 			border-top: solid 46px #cccccc;
 			border-bottom: solid 18px #cccccc;
 		}
 	}
 	/* mock = medium */
-	&[mock="medium"]:not([loaded])::after {
+	&[data-mock="medium"]:not([data-loaded])::after {
 		border-bottom: solid 18px #cccccc;
 	}
 	/* mock = large" */
-	&[mock="large"]:not([loaded]) {
+	&[data-mock="large"]:not([data-loaded]) {
 		&::before {
 			margin-bottom: 18px;
 			border-bottom: solid 80px #cccccc;

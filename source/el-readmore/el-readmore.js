@@ -15,7 +15,7 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 
 	addBtn () {
 		const $btn = document.createElement('button');
-		let btn_classes = this.getAttribute('btn-class');
+		let btn_classes = this.getAttribute('data-btn-class');
 
 		if (btn_classes) {
 			$btn.classList.add(btn_classes.split(' '));
@@ -41,14 +41,14 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 		// watched will trigger the update function
 		// so the element will respond if "expand"
 		// is manipulated by code either.
-		this.toggleAttribute('expanded');
-		this.execInlineEvent('el-toggle');
+		this.toggleAttribute('data-expanded');
+		this.execInlineEvent('data-on:toggle');
 	}
 
 	// ---------------------------------------------
 
 	static get observedAttributes () {
-		return ['expanded'];
+		return ['data-expanded'];
 	}
 
 	attributeChangedCallback(name, oldVal, newVal) {
@@ -57,16 +57,16 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 
 	update () {
 		if (this.$btn)
-			this.$btn.innerHTML = this.getBtnLabel(this.hasAttribute('expanded'));
-		if (this.hasAttribute('expanded'))
-			this.execInlineEvent('el-open');
+			this.$btn.innerHTML = this.getBtnLabel(this.hasAttribute('data-expanded'));
+		if (this.hasAttribute('data-expanded'))
+			this.execInlineEvent('data-on:open');
 		else
-			this.execInlineEvent('el-close');
+			this.execInlineEvent('data-on:close');
 	}
 
 	getBtnLabel (expanded) {
 		const _default = ['Read More', 'Retract'];
-		let labels = this.getAttribute('label');
+		let labels = this.getAttribute('data-label');
 		if (labels)
 			labels = labels.split('|');
 		if (!labels || labels.length < 2)

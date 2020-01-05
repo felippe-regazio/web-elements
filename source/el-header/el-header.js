@@ -8,7 +8,7 @@ customElements.define('el-header', class extends HTMLElement {
 
 		this.applyStyle();
 
-		if (this.hasAttribute('autohide')) {
+		if (this.hasAttribute('data-autohide')) {
 			this.autohide();
 		}
 	}
@@ -30,13 +30,13 @@ customElements.define('el-header', class extends HTMLElement {
 				if (this.classList.contains(hidden_class)) {
 					this.classList.remove(hidden_class);
 					this.emmit('el-header-show');
-					this.execInlineEvent('el-show');
+					this.execInlineEvent('data-on:show');
 				}
 			} else {
 				if (!this.classList.contains(hidden_class)) {
 					this.classList.add(hidden_class);
 					this.emmit('el-header-hide');
-					this.execInlineEvent('el-hide');
+					this.execInlineEvent('data-on:hide');
 				}
 			}
 			this.prevScrollpos = currentScrollPos;

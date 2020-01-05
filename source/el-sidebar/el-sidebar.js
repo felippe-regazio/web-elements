@@ -24,23 +24,23 @@ customElements.define('el-sidebar', class extends HTMLDivElement {
 	}
 
 	open () {
-		this.setAttribute('visible', true);
+		this.setAttribute('data-visible', true);
 		this.emmit('el-sidebar-show');
-		this.execInlineEvent('el-show');
+		this.execInlineEvent('data-on:show');
 		document.body.style.overflow = 'hidden';
 	}
 
 	close () {
-		this.removeAttribute('visible');
+		this.removeAttribute('data-visible');
 		this.emmit('el-sidebar-close');
-		this.execInlineEvent('el-close');
+		this.execInlineEvent('data-on:close');
 		document.body.style.overflow = 'initial';
 	}
 
 	toggle () {
-		this.hasAttribute('visible') ? this.close() : this.open();
+		this.hasAttribute('data-visible') ? this.close() : this.open();
 		this.emmit('el-sidebar-toggle');
-		this.execInlineEvent('el-toggle');
+		this.execInlineEvent('data-on:toggle');
 	}
 
 	emmit (name) {
@@ -91,12 +91,12 @@ customElements.define('el-sidebar', class extends HTMLDivElement {
 			// touchendY > touchstartY // swiped down
 			// touchendY === touchstartY // tap
 			if (touchendX < touchstartX) {
-				if (gestureZone.getAttribute('right')) {
+				if (gestureZone.getAttribute('data-right')) {
 					gestureZone.close();
 				}
 			}
 			if (touchendX > touchstartX) {
-				if (!gestureZone.getAttribute('right')) {
+				if (!gestureZone.getAttribute('data-right')) {
 					gestureZone.close();
 				}
 			}

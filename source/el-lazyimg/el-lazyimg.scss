@@ -1,8 +1,8 @@
 [is="el-lazyimg"] {
-	&[blur]:not([loaded]) {
+	&[data-blur]:not([data-loaded]) {
 		filter: blur(3px);
 	}
-	&[loading] {
+	&[data-loading] {
 		transition: 400ms;
 	}
 }

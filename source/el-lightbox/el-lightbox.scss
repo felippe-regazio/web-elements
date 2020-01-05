@@ -36,11 +36,11 @@
 			padding: 16px;
 		}
 	}
-	&[boxed] > section {
+	&[data-boxed] > section {
 		max-height: 500px;
 		max-width: 800px;
 	}
-	&[visible] {
+	&[data-visible] {
 		display: flex;
 	}
 }

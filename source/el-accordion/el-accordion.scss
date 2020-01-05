@@ -28,7 +28,7 @@
 		  background-color: #f9f9f9;
 		}
 	}
-	&[expand] {
+	&[data-expand] {
 		.el-ac {
 			&-content {
 				opacity: 1;

@@ -60,7 +60,7 @@ customElements.define('el-lazyimg', class extends HTMLImageElement {
 	}
 
 	loadIfVisible () {
-		if (!this.hasAttribute('loaded') && !this.hasAttribute('loading') && this.isInViewport(this)) {
+		if (!this.hasAttribute('data-loaded') && !this.hasAttribute('data-loading') && this.isInViewport(this)) {
 			this.loadImage();
 		}
 	}
@@ -69,16 +69,16 @@ customElements.define('el-lazyimg', class extends HTMLImageElement {
 		this.onload = this.loaded();
 		if(this.src) this.src = this.dataset.src;
 		if (this.srcset) this.srcset = this.dataset.srcset;
-		this.setAttribute('loading', true);
+		this.setAttribute('data-loading', true);
 		this.removeEvents();
 	}
 
 	loaded () {
-		this.setAttribute('loaded', true);
+		this.setAttribute('data-loaded', true);
+		this.removeAttribute('data-loading');
 		this.unblur();
-		this.removeAttribute('loading');
 		this.emmit('el-lazyimg-loaded');
-		this.execInlineEvent('el-loaded');
+		this.execInlineEvent('data-on:loaded');
 	}
 
 	removeEvents () {
@@ -87,7 +87,7 @@ customElements.define('el-lazyimg', class extends HTMLImageElement {
 	}
 
 	unblur () {
-		this.removeAttribute('blur');
+		this.removeAttribute('data-blur');
 	}
 
 	isInViewport(el){

@@ -76,7 +76,7 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 	getTemplate () {
 
 		let template = "";
-		const template_id = this.getAttribute('template');
+		const template_id = this.getAttribute('data-template');
 		const template_el = template_id ? document.getElementById(template_id) : undefined;
 
 		if (template_id && !template_el) {
@@ -90,7 +90,7 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 
 	error (message) {
 		this.loaded();
-		this.execInlineEvent('el-error');
+		this.execInlineEvent('data-on:error');
 		if (this.debug()) console.error(message);
 	}
 
@@ -125,7 +125,7 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 	}
 
 	loadIfVisible () {
-		if (!this.hasAttribute('loaded') && this.isInViewport(this)) {
+		if (!this.hasAttribute('data-loaded') && this.isInViewport(this)) {
 			this.getDataAndMount();
 			this.lazyRemoveEvents();
 		}
@@ -151,26 +151,26 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 	}
 
 	isLazy () {
-		return this.hasAttribute('lazy');
+		return this.hasAttribute('data-lazy');
 	}
 
 	// ----------------------------------------
 
 	reset () {
-		this.removeAttribute('loaded');
+		this.removeAttribute('data-loaded');
 	}
 
 	loaded () {
-		this.setAttribute('loaded', true);
-		this.execInlineEvent('el-loaded');
+		this.setAttribute('data-loaded', true);
+		this.execInlineEvent('data-on:loaded');
 	}
 
 	reset () {
-		this.removeAttribute('loaded');
+		this.removeAttribute('data-loaded');
 	}
 
 	debug () {
-		return this.hasAttribute('debug');
+		return this.hasAttribute('data-debug');
 	}
 
 	execInlineEvent (event) {

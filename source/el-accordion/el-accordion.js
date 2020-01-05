@@ -5,12 +5,12 @@ customElements.define('el-accordion', class extends HTMLDivElement {
 	}
 
 	static get observedAttributes () {
-		return ['summary'];
+		return ['data-summary'];
 	}
 
 	attributeChangedCallback(name, oldVal, newVal) {
 		this[name] = newVal;
-		const func = `update${name.charAt(0).toUpperCase() + name.slice(1)}`;
+		const func = `update_${name.toLowerCase().replace('-', '_')}`;
 		if (typeof this[func] === 'function') this[func](newVal);
 	}
 
@@ -35,22 +35,22 @@ customElements.define('el-accordion', class extends HTMLDivElement {
 		});
 	}
 
-	updateSummary (value) {
+	update_data_summary (value) {
 		this.summary = value;
 		const $summary = this.querySelector('.el-ac-summary');
 		if ($summary) $summary.innerHTML = value;
 	}
 
 	toggleAccordion () {
-		const attr = 'expand';
+		const attr = 'data-expand';
 		if (!this.hasAttribute(attr)) {
 			this.setAttribute(attr, true);
 			this.emmit('el-accordion-open');
-			this.execInlineEvent('el-open');
+			this.execInlineEvent('data-on:open');
 		} else {
 			this.removeAttribute(attr);
 			this.emmit('el-accordion-close');
-			this.execInlineEvent('el-close');
+			this.execInlineEvent('data-on:close');
 		}
 	}
 

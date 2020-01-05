@@ -20,7 +20,7 @@
   </head>
   <body>
 
-    <header is="el-header" autohide el-hide="" data-show="">Page Header Testing</header>
+    <header is="el-header" data-on:hide="" data-on:show="ex" data-autohide>Page Header Testing</header>
 
     <script type="text/javascript">
         document.addEventListener('el-header-show', function (e) {
@@ -32,7 +32,7 @@
 
         <h2>Sidebar</h2>
 
-        <div is="el-sidebar" id="sidebar1" right>
+        <div is="el-sidebar" id="sidebar1" data-right>
             <section>
                 <header>
                     <span>Header Text</span>
@@ -57,7 +57,7 @@
         <h2>Card</h2>
 
 
-        <div is="el-card" onclick="lightbox1('open'); return false" hoverble>
+        <div is="el-card" onclick="lightbox1('open'); return false" data-hoverble>
           <img src="http://picsum.photos/300">
           <div>
             <h4>This will open a lightbox</h4>
@@ -87,18 +87,18 @@
 
         <h2>Accordion</h2>
 
-        <div is="el-accordion" summary="Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna">
+        <div is="el-accordion" data-summary="Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna">
           <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
         </div>
 
         <script type="text/javascript">function ex (el) {alert(el.innerHTML)}</script>
 
-        <div is="el-accordion" summary="Accordion Test 2" el-open="ex" el-close="ex">
+        <div is="el-accordion" data-summary="Accordion Test 2" data-on:open="ex" data-on:close="ex">
           <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
         </div>
 
 
-        <div is="el-accordion" summary="Accordion Test 3" expand>
+        <div is="el-accordion" data-summary="Accordion Test 3" data-expand>
           <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
         </div>
 
@@ -107,7 +107,7 @@
         <br/>
         <h2>Lightbox</h2>
 
-        <div id="lightbox1" is="el-lightbox" boxed>
+        <div id="lightbox1" is="el-lightbox" data-boxed>
             <section>
                 <header>
                     <span>Header Text</span>
@@ -357,7 +357,7 @@
         </style>
 
         <div class='image-example'>
-            <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000" blur/>
+            <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000" data-blur/>
         </div>
 
         <br/><br/>
@@ -371,7 +371,7 @@
         <h2>Mustache Element</h2>
 
         <div is="el-card">
-            <div is="el-mustache" data-json='https://restcountries.eu/rest/v2/alpha/col' mock="large" lazy>
+            <div is="el-mustache" data-json='https://restcountries.eu/rest/v2/alpha/col' data-mock="large" data-lazy>
                 <h1>{{name}} {{alpha2Code}}</h1>
                 <h4>Capital {{capital}}</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -384,7 +384,7 @@
         </div>
 
         <div is="el-card">
-            <div is="el-mustache" data-json='{"name":"Brasil", "alpha2Code":"BR", "capital":"Brasília"}' mock>
+            <div is="el-mustache" data-json='{"name":"Brasil", "alpha2Code":"BR", "capital":"Brasília"}' data-mock>
                 <h1>{{name}} {{alpha2Code}}</h1>
                 <h4>Capital {{capital}}</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -398,7 +398,7 @@
         </div>
 
         <div is="el-card">
-            <div is="el-mustache" data-json='{"name":"Russia", "alpha2Code":"RU", "capital":"Moscou"}' template="el-mustache-example" mock debug></div>
+            <div is="el-mustache" data-json='{"name":"Russia", "alpha2Code":"RU", "capital":"Moscou"}' data-template="el-mustache-example" data-mock data-debug></div>
         </div>
 
         <template id="el-mustache-example">
@@ -415,16 +415,16 @@
         <br/><br/>
         <h2>Spinner</h2>
 
-        <div is="el-spinner" color="purple"></div>
-        <div is="el-spinner" color="green" single></div>
-        <div is="el-spinner" color="cyan" outline></div>
-        <div is="el-spinner" color="red" outline single></div>
-        <div is="el-spinner" color="black" size="100"></div>
+        <div is="el-spinner" data-color="purple"></div>
+        <div is="el-spinner" data-color="green" data-single></div>
+        <div is="el-spinner" data-color="cyan" data-outline></div>
+        <div is="el-spinner" data-color="red" data-outline data-single></div>
+        <div is="el-spinner" data-color="black" data-size="100"></div>
 
         <br/><br/>
         <h2>Read More</h2>
 
-        <div is="el-readmore" length="400" label="More|Minus" el-open="ex">
+        <div is="el-readmore" data-label="More|Minus" data-on:open="ex">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <ins>
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -435,7 +435,7 @@
             </p>
         </div>
 
-        <div is="el-readmore" length="400" label="More|Minus" expanded>
+        <div is="el-readmore" data-label="More|Minus" data-expanded>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <ins>
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

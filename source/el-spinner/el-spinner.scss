@@ -33,17 +33,17 @@
 			100%{transform: rotate(360deg)}
 		}
 	}
-	&[single] .el-spinner-main {
+	&[data-single] .el-spinner-main {
 		&::before {
 			display: none;
 		}
 	}
-	&[outline] .el-spinner-main {
+	&[data-outline] .el-spinner-main {
 		&::before {
 			border-style: double;
 		}
 	}
-	&[outline][single] .el-spinner-main {
+	&[data-outline][data-single] .el-spinner-main {
 		&::after {
 			border-style: double;
 		}

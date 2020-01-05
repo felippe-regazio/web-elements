@@ -31,16 +31,16 @@
 			flex: 1;
 		}
 	}
-	&:not([right]) > section {
+	&:not([data-right]) > section {
 		transform: translateX(-100%);
 	}
-	&[right] {
+	&[data-right] {
 		text-align: right;
 		> section {
 			transform: translateX(100%);
 		}
 	}
-	&[visible] {
+	&[data-visible] {
 		opacity: 1;
 		visibility: visible;
 		> section {
