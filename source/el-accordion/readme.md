@@ -77,5 +77,5 @@ Example:
 
 # Styling
 
-This is a standard HTML extended, so you can freely style it, apply your own classes, ids, attributes, etc.
+This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc.
 You may use the `[is="el-accordion"]` element selector to target this element on your CSS.
