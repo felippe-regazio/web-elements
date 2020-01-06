@@ -4,43 +4,43 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are `Non-Autonom
 
 ## Elements List
 
-01. :small_blue_diamond: **Accordion**
+01. :zap: **Accordion**
 
 	Extends the `div` element giving it an Accordion structure and behavior.
 
-02. :small_blue_diamond: **Card**
+02. :zap: **Card**
 
 	Extends the `div` element giving it a Card structure and behavior.
 
-03. :small_blue_diamond: **Header**
+03. :zap: **Header**
 
 	Extends the `header` element giving it a set of features as fixed on top and auto hide on scroll.
 
-04. :small_blue_diamond: **Image Viewer**
+04. :zap: **Image Viewer**
 
 	Extends the `img` element giving it a `full screen view`, the image will be showed on a lightbox when clicked.
 
-05. :small_blue_diamond: **Lazy Load IMG**
+05. :zap: **Lazy Load IMG**
 
 	Extends the `img` element giving it a `lazy load` behavior. The images will be only loaded when visible.
 
-06. :small_blue_diamond: **Lightbox**
+06. :zap: **Lightbox**
 
 	Extends the `div` element giving it a Lightbox behavior.
 
-07. :small_blue_diamond: **Mustache Template Div**
+07. :zap: **Mustache Template Div**
 
 	Extends the `div` element giving it a `template engine capabilities`. The div will be capable to parse `json` to fill its content.
 
-08. :small_blue_diamond: **Read More**
+08. :zap: **Read More**
 
 	Extends the `div` element giving the content inside a `Read More` feature.
 
-09. :small_blue_diamond: **Sidebar**
+09. :zap: **Sidebar**
 
 	Extends the `div` element giving it a Sidebar structure and behavior.
 
-10. :small_blue_diamond: **Spinner**
+10. :zap: **Spinner**
 
 	Extends the `div` element giving it different configurations to act like a loading spinner.
 
