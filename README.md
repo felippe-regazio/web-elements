@@ -1,46 +1,50 @@
 # Custom Elements Collection
 
-This is a Vanilla JavaScript `Custom Elements Collection`. They are `Non-Autonomous Custom Elements` focused on behavior, with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
+This is a Vanilla JavaScript `Custom Elements Collection`. They are `Non-Autonomous Custom Elements` focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
 
 ## Elements List
 
-01. Accordion
+01. :small_blue_diamond: **Accordion**
 
 	Extends the `div` element giving it an Accordion structure and behavior.
 
-02. Card
+02. :small_blue_diamond: **Card**
 
 	Extends the `div` element giving it a Card structure and behavior.
 
-03. Header
+03. :small_blue_diamond: **Header**
 
 	Extends the `header` element giving it a set of features as fixed on top and auto hide on scroll.
 
-04. Image Viewer
+04. :small_blue_diamond: **Image Viewer**
 
 	Extends the `img` element giving it a `full screen view`, the image will be showed on a lightbox when clicked.
 
-05. Lazy Load IMG
+05. :small_blue_diamond: **Lazy Load IMG**
 
 	Extends the `img` element giving it a `lazy load` behavior. The images will be only loaded when visible.
 
-06. Lightbox
+06. :small_blue_diamond: **Lightbox**
 
 	Extends the `div` element giving it a Lightbox behavior.
 
-07. Mustache Template Div
+07. :small_blue_diamond: **Mustache Template Div**
 
 	Extends the `div` element giving it a `template engine capabilities`. The div will be capable to parse `json` to fill its content.
 
-08. Read More
+08. :small_blue_diamond: **Read More**
 
 	Extends the `div` element giving the content inside a `Read More` feature.
 
-09. Sidebar
+09. :small_blue_diamond: **Sidebar**
 
 	Extends the `div` element giving it a Sidebar structure and behavior.
 
-10. Spinner
+10. :small_blue_diamond: **Spinner**
+
+	Extends the `div` element giving it different configurations to act like a loading spinner.
+
+
 
 
 The use of web elements is given
