@@ -60,6 +60,8 @@ The above element gives the div new powers using `my-element` capabilities. That
 document.createElement("div", { is: "my-element" });
 ```
 
+**You can add all elements adding a single bundle to your document, or you can add only the elements that you need. The bundle is in the folder `bundle`. You must add the elements.min.css and elements.min.js files. If you want to pick a la carte, you can add the elements on the folder `elements`. You also need to add the element JS and CSS files.**
+
 Is highly recommended the use of a CSS Normalizer (there is one on the `vendor` folder, thx @Necolas), and a Polyfill which is discussed on section "Polyfill" of this README. You must add the Polyfill before the elements scripts.
 
 ## Styling
