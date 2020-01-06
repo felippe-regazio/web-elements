@@ -68,8 +68,7 @@ As the elements are focused on Behavior, they're initial style are really simple
 
 As the elements are add on the initial context, don't use a Shadow DOM or custom tag names, there is no hassle to style it. You just add your styles. A cool thing about it is that you can also use the `[is]` attribute to target the elements. For example:
 
-html
-```
+```html
 	<div is="el-lightbox">
 		...
 	</div>
@@ -103,6 +102,10 @@ Classes and attributes are also supported, just add them. You're still dealing w
 Custom elements are a specification part of the Web Components:
 
 > Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes (MDN).
+
+# Polyfill
+
+Safari s
 
 # Development
 
