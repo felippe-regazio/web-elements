@@ -23,9 +23,9 @@ All the direct children of the div[is="el-accordion"] will be wrapped in a colla
 | data-summary | The header section of your Accordion. Commonly used as a title, must be added on the root accordion element |
 | data-expand | Expand the accordion when present, or collapse when not present. Apply a value to this attribute will take no effect on the element behavior. You must add or remove it in order to trigger its behavior. This Attr must be added on the root accordion element |
 
-# On-Events
+# Global Events
 
-Global (on-event) Javascript events.
+Global Javascript events.
 
 | Event | Description |
 | --- | --- |
@@ -38,7 +38,7 @@ You can access the element on the event callback by checking for `data.details` 
 Example:
 
 ```javascript
-document.on('el-accordion-expand', e => {
+document.addEventListener('el-accordion-expand', e => {
 	// e is contains data about the event
 	// e.details or e.accordion contains the target element
 	console.log(e.accordion);
