@@ -48,7 +48,7 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomo
 
 **:book: Each element has its own documentation inside the `source/[element-name]` folder.**
 
-As Customized built-in elements inherit from basic HTML elements, you can specify them via HTML or create them via JavaScript:
+As customized built-in elements inherits from basic HTML elements, you can specify them via HTML or create them via JavaScript:
 
 ```html
 <div is="my-element"></div>
