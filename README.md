@@ -1,6 +1,6 @@
 # Custom Elements Collection
 
-This is a Vanilla JavaScript `Custom Elements Collection`. They are `Non-Autonomous Custom Elements` focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
+This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous, or `Built-in Custom Elements` focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
 
 ## Elements List
 
@@ -44,18 +44,30 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are `Non-Autonom
 
 	Extends the `div` element giving it different configurations to act like a loading spinner.
 
+# Usage
 
+** :book: Each element has its own documentation inside the `source/[element-name]` folder.**
+As Customized built-in elements inherit from basic HTML elements, you can specify them via HTML or create them via JavaScript:
 
+```
+<div is="my-element"></div>
+```
 
-The use of web elements is given
+The above element gives the div new powers using `my-element` capabilities. That also means that my-element extends the div element. To create this same element via JavaScript you can do:
 
-# What is a Custom Element
+```
+document.createElement("div", { is: "my-element" });
+```
 
-Custom elements are a specification part of the Web Components, and are defined in the spec as:
+# Styling
+
+# Benefits
+
+# Custom Elements?
+
+Custom elements are a specification part of the Web Components:
 
 > Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes.
-
-(Under Construction)
 
 # Development
 
