@@ -18,11 +18,11 @@ All the direct children of the div[is="el-accordion"] will be wrapped in a colla
 
 # Attributes
 
-|----------------|---|
-| data-summary   | The header section of your Accordion. Commonly used as a title. |
-|----------------|---|
-| data-expand    | Expand the accordion when present, or collapse when not present. Apply a value to this attribute will be indifferent to the element behavior. You must add or remove it. |
-|----------------|---|
+
+| Attr | Description |
+| --- | --- |
+| data-summary | The header section of your Accordion. Commonly used as a title |
+| data-expand | Expand the accordion when present, or collapse when not present. Apply a value to this attribute will be indifferent to the element behavior. You must add or remove it |
 
 # Styling
 
