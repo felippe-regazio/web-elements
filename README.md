@@ -44,7 +44,7 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomo
 
 	Extends the `div` element giving it different configurations to act like a loading spinner.
 
-# Usage
+## Usage
 
 **:book: Each element has its own documentation inside the `source/[element-name]` folder.**
 
@@ -60,15 +60,49 @@ The above element gives the div new powers using `my-element` capabilities. That
 document.createElement("div", { is: "my-element" });
 ```
 
-# Styling
+Is highly recommended the use of a CSS Normalizer (there is one on the `vendor` folder, thx @Necolas), and a Polyfill which is discussed on section "Polyfill" of this README.
 
-# Benefits
+## Styling
 
-# Custom Elements?
+As the elements are focused on Behavior, they're initial style are really simple and minimalistic. In fact, even the CSS distributed with this elements are Behavior-Driven. The idea is keep the user free to add its own visual identity.
+
+As the elements are add on the initial context, don't use a Shadow DOM or custom tag names, there is no hassle to style it. You just add your styles. A cool thing about it is that you can also use the `[is]` attribute to target the elements. For example:
+
+html
+```
+	<div is="el-lightbox">
+		...
+	</div>
+
+	<style>
+		[is="el-lightbox"] {
+			...
+		}
+		[is="el-lightbox"] div:fist-child {
+			...
+		}
+	</style>
+```
+
+Classes and attributes are also supported, just add them. You're still dealing with a simple HTML Standard element, but with some extra power.
+
+## Benefits
+
+1. Vanilla JS. No dependencies. No framework.
+2. Add all elements, or only those that you will need.
+3. Behavior driven, you are free to add your styles.
+4. No Shadow-DOM
+5. Inherit from Standards, inheriting all the common elements structure
+6. Semantic HTML with no strange custom tag names
+7. SEO Friendly and Accessibility friendly
+8. Reusable and Minimal
+9. Provides separation of concerns between data, behavior and style.
+
+## Custom Elements?
 
 Custom elements are a specification part of the Web Components:
 
-> Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes.
+> Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes (MDN).
 
 # Development
 
