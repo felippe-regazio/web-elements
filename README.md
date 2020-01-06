@@ -60,7 +60,7 @@ The above element gives the div new powers using `my-element` capabilities. That
 document.createElement("div", { is: "my-element" });
 ```
 
-Is highly recommended the use of a CSS Normalizer (there is one on the `vendor` folder, thx @Necolas), and a Polyfill which is discussed on section "Polyfill" of this README.
+Is highly recommended the use of a CSS Normalizer (there is one on the `vendor` folder, thx @Necolas), and a Polyfill which is discussed on section "Polyfill" of this README. You must add the Polyfill before the elements scripts.
 
 ## Styling
 
