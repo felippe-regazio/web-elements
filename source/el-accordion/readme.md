@@ -63,7 +63,7 @@ Inline element events.
 Example:
 
 ```html
-<div is="el-accordion" data-summary="Accordion Test" data-on:open="myFunc">
+<div is="el-accordion" data-summary="Accordion Test" data-on:expand="myFunc">
 	<p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
 </div>
 
