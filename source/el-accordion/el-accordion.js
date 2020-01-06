@@ -45,12 +45,12 @@ customElements.define('el-accordion', class extends HTMLDivElement {
 		const attr = 'data-expand';
 		if (!this.hasAttribute(attr)) {
 			this.setAttribute(attr, true);
-			this.emmit('el-accordion-open');
-			this.execInlineEvent('data-on:open');
+			this.emmit('el-accordion-expand');
+			this.execInlineEvent('data-on:expand');
 		} else {
 			this.removeAttribute(attr);
-			this.emmit('el-accordion-close');
-			this.execInlineEvent('data-on:close');
+			this.emmit('el-accordion-collapse');
+			this.execInlineEvent('data-on:collapse');
 		}
 	}
 
