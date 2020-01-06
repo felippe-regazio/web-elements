@@ -1,6 +1,55 @@
-# web-elements
+# Custom Elements Collection
 
-Vanilla JS minimalistic web elements collection
+This is a Vanilla JavaScript `Custom Elements Collection`. They are `Non-Autonomous Custom Elements` focused on behavior, with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
+
+## Elements List
+
+01. Accordion
+
+	Extends the `div` element giving it an Accordion structure and behavior.
+
+02. Card
+
+	Extends the `div` element giving it a Card structure and behavior.
+
+03. Header
+
+	Extends the `header` element giving it a set of features as fixed on top and auto hide on scroll.
+
+04. Image Viewer
+
+	Extends the `img` element giving it a `full screen view`, the image will be showed on a lightbox when clicked.
+
+05. Lazy Load IMG
+
+	Extends the `img` element giving it a `lazy load` behavior. The images will be only loaded when visible.
+
+06. Lightbox
+
+	Extends the `div` element giving it a Lightbox behavior.
+
+07. Mustache Template Div
+
+	Extends the `div` element giving it a `template engine capabilities`. The div will be capable to parse `json` to fill its content.
+
+08. Read More
+
+	Extends the `div` element giving the content inside a `Read More` feature.
+
+09. Sidebar
+
+	Extends the `div` element giving it a Sidebar structure and behavior.
+
+10. Spinner
+
+
+The use of web elements is given
+
+# What is a Custom Element
+
+Custom elements are a specification part of the Web Components, and are defined in the spec as:
+
+> Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes.
 
 (Under Construction)
 
