@@ -105,7 +105,10 @@ Custom elements are a specification part of the Web Components:
 
 # Polyfill
 
-Safari s
+:warning: Safari needs a Polyfill. You will find the polyfill on the `vendor` directory.
+Thanks to `Andrea Giammarchi` that developed an awesome polyfill that has less then 1kb:
+
+> Fully based on native customElements implementation, built-in element is a polyfill that weights less than 1 Kb, it leaves Chrome and Firefox completely untouched, and it uses modern features on Safari, which is why it’s so lightweight : https://hackernoon.com/extending-built-in-elements-9dce404b75b4
 
 # Development
 
