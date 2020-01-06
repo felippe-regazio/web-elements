@@ -50,13 +50,13 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomo
 
 As Customized built-in elements inherit from basic HTML elements, you can specify them via HTML or create them via JavaScript:
 
-```
+```html
 <div is="my-element"></div>
 ```
 
 The above element gives the div new powers using `my-element` capabilities. That also means that my-element extends the div element. To create this same element via JavaScript you can do:
 
-```
+```javascript
 document.createElement("div", { is: "my-element" });
 ```
 
