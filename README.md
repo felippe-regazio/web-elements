@@ -1,6 +1,6 @@
 # Custom Elements Collection
 
-This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous, or `Built-in Custom Elements` focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
+This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
 
 ## Elements List
 
