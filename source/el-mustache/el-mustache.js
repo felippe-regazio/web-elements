@@ -33,8 +33,14 @@ customElements.define('el-mustache', class extends HTMLDivElement {
 			// json string
 			const json = this.parseJsonAttr(data_json);
 			this.render(json);
+		} else if (data_json.trim().startsWith("#")) {
+			// json element (id)
+			const json = {};
+			const data = document.getElementById(data_json.slice(1));
+			if (data) json = this.parseJsonAttr(data.innerHTML);
+			this.render(json);
 		} else {
-			// url request
+			// json url request
 			this.httpRequest(data_json).then(json => {
 				this.render(json);
 			});
