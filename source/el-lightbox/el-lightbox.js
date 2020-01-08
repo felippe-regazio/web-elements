@@ -16,7 +16,7 @@ customElements.define('el-lightbox', class extends HTMLDivElement {
 	createHandler () {
 		let id = this.id;
 		if (id) {
-			window[id] = action => {
+			window[id] = (action = 'open') => {
 				this[action.toLowerCase()]();
 			}
 		}

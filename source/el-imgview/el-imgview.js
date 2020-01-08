@@ -16,7 +16,7 @@ customElements.define('el-imgview', class extends HTMLImageElement {
 		document.body.append(this.createView());
 		document.body.style.overflow = "hidden";
 		this.emmit('el-imgview-show');
-		this.execInlineEvent('el-show');
+		this.execInlineEvent('data-on:show');
 	}
 
 	createView () {
@@ -48,7 +48,7 @@ customElements.define('el-imgview', class extends HTMLImageElement {
 		this.view.remove();
 		document.body.style.overflow = "initial";
 		this.emmit('el-imgview-close');
-		this.execInlineEvent('el-close');
+		this.execInlineEvent('data-on:close');
 	}
 
 	addCloseListeners () {
