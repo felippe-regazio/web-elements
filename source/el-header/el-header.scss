@@ -14,5 +14,7 @@
 		transition: 100ms;
 		transition-delay: 500ms;
 		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
 	}
 }
