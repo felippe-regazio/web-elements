@@ -6,7 +6,7 @@ customElements.define('el-lightbox', class extends HTMLDivElement {
 
 	connectedCallback () {
 		this.createHandler();
-		this.addCloseListeners();
+		this.addHideListeners();
 	}
 
 	disconnectedCallback () {
@@ -16,13 +16,13 @@ customElements.define('el-lightbox', class extends HTMLDivElement {
 	createHandler () {
 		let id = this.id;
 		if (id) {
-			window[id] = (action = 'open') => {
+			window[id] = action => {
 				this[action.toLowerCase()]();
 			}
 		}
 	}
 
-	open () {
+	show () {
 		this.setAttribute('data-visible', true);
 		this.focus();
 		document.body.style.overflow = 'hidden';
@@ -30,26 +30,26 @@ customElements.define('el-lightbox', class extends HTMLDivElement {
 		this.execInlineEvent('data-on:show');
 	}
 
-	close () {
+	hide () {
 		this.removeAttribute('data-visible');
 		document.body.style.overflow = 'initial';
-		this.emmit('el-lightbox-close');
-		this.execInlineEvent('data-on:close');
+		this.emmit('el-lightbox-hide');
+		this.execInlineEvent('data-on:hide');
 	}
 
 	toggle () {
-		this.hasAttribute('data-visible') ? this.close() : this.open();
+		this.hasAttribute('data-visible') ? this.hide() : this.show();
 		this.emmit('el-lightbox-toggle');
 		this.execInlineEvent('data-on:toggle');
 	}
 
-	addCloseListeners () {
+	addHideListeners () {
 		this.addEventListener('click', e => {
-			if (e.target === this) this.close();
+			if (e.target === this) this.hide();
 		});
 		this.$onEscape = window.addEventListener('keyup', e => {
 			if(e.key === "Escape") {
-				this.close();
+				this.hide();
 			}
 		});
 	}

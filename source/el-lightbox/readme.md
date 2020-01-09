@@ -28,7 +28,7 @@ The files are on the `elements/el-lightbox/` folder. Of you can add all elements
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </div>
     <footer>
-      <button onclick="lightbox1('close')">Ok</button>
+      <button onclick="lightbox1('hide')">Ok</button>
     </footer>
   </section>
 </div>
@@ -46,7 +46,7 @@ The header and footer will be fixed. The div inside the section must be the cont
 
 The element `id` must be unique to your entire document and must be a valid function name. Then the element `id` will be also available on the document as a `function`. For exemple, the `lightbox1` on the example above will release the function `lightbox1()` on the document.
 
-You must use this function to manage your lightbox state. Your lightbox function takes 1 param that has 3 arguments: `open`,`close`,`toggle`. Those arguments will determine the state of the Lightbox.
+You must use this function to manage your lightbox state. Your lightbox function takes 1 param that has 3 arguments: `show`,`hide`,`toggle`. Those arguments will determine the state of the Lightbox.
 
 For example: Lets assume that your have a lightbox with an id = lightbox1. So, you will have:
 
@@ -54,14 +54,14 @@ For example: Lets assume that your have a lightbox with an id = lightbox1. So, y
 lightbox1(state);
 ````
 
-Where state can be `open`,`close`,`toggle`. So, anywhere on the document you can use the function lightbox1 (or the id of your other lightboxes) to manage your lightbox state:
+Where state can be `show`,`hide`,`toggle`. So, anywhere on the document you can use the function lightbox1 (or the id of your other lightboxes) to manage your lightbox state:
 
 ```javascript
-// opening the lightbox1
-lightbox1('open');
+// showing the lightbox1
+lightbox1('show');
 
 // closing the lightbox1
-lightbox1('close');
+lightbox1('hide');
 
 // toggleing the lightbox1
 lightbox1('toggle');
@@ -72,6 +72,7 @@ lightbox1('toggle');
 | Attr | Description |
 | --- | --- |
 | data-visible | Present when the Lightbox gets visible |
+| data-boxed | Gives a default size (max-height: 500px; max-width: 800px) to the lightbox content holder |
 
 # Global Events
 
@@ -79,8 +80,8 @@ Global Javascript events.
 
 | Event | Description |
 | --- | --- |
-| el-lightbox-show | Triggered when a lightbox is opened |
-| el-lightbox-close | Triggered when a lightbox is closed |
+| el-lightbox-show | Triggered when a lightbox is showed |
+| el-lightbox-hide | Triggered when a lightbox is hidden |
 
 The callback takes 1 argument which returns data information about the event.
 You can access the element on the event callback by checking for `data.details` or `data.lightbox`.
@@ -102,7 +103,7 @@ Inline element events.
 | Event | Description |
 | --- | --- |
 | data-on:show | Triggered when the given el-lightbox is showed |
-| data-on:close | Triggered when the given el-lightbox is closed |
+| data-on:hide | Triggered when the given el-lightbox is hidden |
 
 1. This events must be added on the root header element. The parameter must be a function name.
 2. The function must be on the `window` scope. 
@@ -122,7 +123,7 @@ Example:
         Example
     </div>
     <footer>
-      <button onclick="lightbox1('close')">Ok</button>
+      <button onclick="lightbox1('hide')">Ok</button>
     </footer>
   </section>
 </div>

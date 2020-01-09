@@ -46,6 +46,10 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomo
 
 ## Usage
 
+1. 
+2. You must add the elements bundle CSS and JS to your document. See the folder `bundle`. This will allow you to use all elements on your doc.
+3. If you prefer to use the elements à la cart, you must add the element JS and CSS from the folder `elements`.
+
 **:book: Each element has its own documentation inside the `source/[element-name]` folder.**
 
 As customized built-in elements inherits from basic HTML elements, you can specify them via HTML or create them via JavaScript:

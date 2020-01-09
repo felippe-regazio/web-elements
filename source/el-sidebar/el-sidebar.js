@@ -25,8 +25,8 @@ customElements.define('el-sidebar', class extends HTMLDivElement {
 
 	open () {
 		this.setAttribute('data-visible', true);
-		this.emmit('el-sidebar-show');
-		this.execInlineEvent('data-on:show');
+		this.emmit('el-sidebar-open');
+		this.execInlineEvent('data-on:open');
 		document.body.style.overflow = 'hidden';
 	}
 
