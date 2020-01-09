@@ -59,9 +59,9 @@ customElements.define('el-readmore', class extends HTMLDivElement {
 		if (this.$btn)
 			this.$btn.innerHTML = this.getBtnLabel(this.hasAttribute('data-expanded'));
 		if (this.hasAttribute('data-expanded'))
-			this.execInlineEvent('data-on:open');
+			this.execInlineEvent('data-on:expand');
 		else
-			this.execInlineEvent('data-on:close');
+			this.execInlineEvent('data-on:collapse');
 	}
 
 	getBtnLabel (expanded) {
