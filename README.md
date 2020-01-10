@@ -4,45 +4,45 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomo
 
 ## Elements List
 
-01. :zap: **Accordion**
+* ⚡️ Accordion
+ 
+Extends the div element giving it an Accordion structure and behavior.
 
-	Extends the `div` element giving it an Accordion structure and behavior.
+* ⚡️ Card
 
-02. :zap: **Card**
+Extends the div element giving it a Card structure and behavior.
 
-	Extends the `div` element giving it a Card structure and behavior.
+* ⚡️ Header
 
-03. :zap: **Header**
+Extends the header element giving it a set of features as fixed on top and auto hide on scroll.
 
-	Extends the `header` element giving it a set of features as fixed on top and auto hide on scroll.
+* ⚡️ Image Viewer
 
-04. :zap: **Image Viewer**
+Extends the img element giving it a full screen view, the image will be showed on a lightbox when clicked.
 
-	Extends the `img` element giving it a `full screen view`, the image will be showed on a lightbox when clicked.
+* ⚡️ Lazy Load IMG
 
-05. :zap: **Lazy Load IMG**
+Extends the img element giving it a lazy load behavior. The images will be only loaded when visible.
 
-	Extends the `img` element giving it a `lazy load` behavior. The images will be only loaded when visible.
+* ⚡️ Lightbox
 
-06. :zap: **Lightbox**
+Extends the div element giving it a Lightbox behavior.
 
-	Extends the `div` element giving it a Lightbox behavior.
+* ⚡️ Mustache Template Div
 
-07. :zap: **Mustache Template Div**
+Extends the div element giving it a template engine capabilities. The div will be capable to parse json to fill its content.
 
-	Extends the `div` element giving it a `template engine capabilities`. The div will be capable to parse `json` to fill its content.
+* ⚡️ Read More
 
-08. :zap: **Read More**
+Extends the div element giving the content inside a Read More feature.
 
-	Extends the `div` element giving the content inside a `Read More` feature.
+* ⚡️ Sidebar
 
-09. :zap: **Sidebar**
+Extends the div element giving it a Sidebar structure and behavior.
 
-	Extends the `div` element giving it a Sidebar structure and behavior.
+* ⚡️ Spinner
 
-10. :zap: **Spinner**
-
-	Extends the `div` element giving it different configurations to act like a loading spinner.
+Extends the div element giving it different configurations to act like a loading spinner.
 
 ## Usage
 
