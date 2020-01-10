@@ -10,52 +10,52 @@ Built-In Web Elements are part of the "Web Components" specs. They allow us to e
 
 * ⚡️ Accordion
  
-Extends the div element giving it an Accordion structure and behavior | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-accordion)
+Extends the div element giving it an Accordion structure and behavior | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-accordion)
 
 
 * ⚡️ Card
 
-Extends the div element giving it a Card structure and behavior. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-card)
+Extends the div element giving it a Card structure and behavior. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-card)
 
 
 * ⚡️ Header
 
-Extends the header element giving it a set of features as fixed on top and auto hide on scroll. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-header)
+Extends the header element giving it a set of features as fixed on top and auto hide on scroll. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-header)
 
 
 * ⚡️ Image Viewer
 
-Extends the img element giving it a full screen view, the image will be showed on a lightbox when clicked. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-imgview)
+Extends the img element giving it a full screen view, the image will be showed on a lightbox when clicked. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-imgview)
 
 
 * ⚡️ Lazy Load IMG
 
-Extends the img element giving it a lazy load behavior. The images will be only loaded when visible. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lazyimg)
+Extends the img element giving it a lazy load behavior. The images will be only loaded when visible. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lazyimg)
 
 
 * ⚡️ Lightbox
 
-Extends the div element giving it a Lightbox behavior. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lightbox)
+Extends the div element giving it a Lightbox behavior. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lightbox)
 
 
 * ⚡️ Mustache Template Div
 
-Extends the div element giving it a template engine capabilities. The div will be capable to parse json to fill its content. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-mustache)
+Extends the div element giving it a template engine capabilities. The div will be capable to parse json to fill its content. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-mustache)
 
 
 * ⚡️ Read More
 
-Extends the div element giving the content inside a Read More feature. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-readmore)
+Extends the div element giving the content inside a Read More feature. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-readmore)
 
 
 * ⚡️ Sidebar
 
-Extends the div element giving it a Sidebar structure and behavior. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-sidebar)
+Extends the div element giving it a Sidebar structure and behavior. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-sidebar)
 
 
 * ⚡️ Spinner
 
-Extends the div element giving it different configurations to act like a loading spinner. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-spinner)
+Extends the div element giving it different configurations to act like a loading spinner. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-spinner)
 
 
 ## Usage
@@ -83,7 +83,7 @@ document.createElement("div", { is: "my-element" });
 
 ## Examples
 
-You see some live examples on https://felippe-regazio.github.io/web-elements/.  
+You can see some live examples on https://felippe-regazio.github.io/web-elements/.  
 You can check some usage examples on the element Documentation MD file. See the links on **Elements List**.  
 
 ## Styling
