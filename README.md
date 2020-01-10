@@ -1,59 +1,73 @@
 # Custom Elements Collection
 
-This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API - https://felippe-regazio.github.io/web-elements/
+This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
+
+As said by MDN: "Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps".
+
+Built-In Web Elements are part of the "Web Components" specs. They allow us to extend a standard HTML components and give it new powers. The use is very simple: just an HTML tag with a `is="my-element"` attribute telling how the tag will be extended giving it new super powers. Built-in custom elements are a specification part of the Web Components official spec. More info on - https://felippe-regazio.github.io/web-elements/
 
 ## Elements List
 
 * ⚡️ Accordion
  
-Extends the div element giving it an Accordion structure and behavior.
+Extends the div element giving it an Accordion structure and behavior | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-accordion)
+
 
 * ⚡️ Card
 
-Extends the div element giving it a Card structure and behavior.
+Extends the div element giving it a Card structure and behavior. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-card)
+
 
 * ⚡️ Header
 
-Extends the header element giving it a set of features as fixed on top and auto hide on scroll.
+Extends the header element giving it a set of features as fixed on top and auto hide on scroll. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-header)
+
 
 * ⚡️ Image Viewer
 
-Extends the img element giving it a full screen view, the image will be showed on a lightbox when clicked.
+Extends the img element giving it a full screen view, the image will be showed on a lightbox when clicked. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-imgview)
+
 
 * ⚡️ Lazy Load IMG
 
-Extends the img element giving it a lazy load behavior. The images will be only loaded when visible.
+Extends the img element giving it a lazy load behavior. The images will be only loaded when visible. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lazyimg)
+
 
 * ⚡️ Lightbox
 
-Extends the div element giving it a Lightbox behavior.
+Extends the div element giving it a Lightbox behavior. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lightbox)
+
 
 * ⚡️ Mustache Template Div
 
-Extends the div element giving it a template engine capabilities. The div will be capable to parse json to fill its content.
+Extends the div element giving it a template engine capabilities. The div will be capable to parse json to fill its content. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-mustache)
+
 
 * ⚡️ Read More
 
-Extends the div element giving the content inside a Read More feature.
+Extends the div element giving the content inside a Read More feature. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-readmore)
+
 
 * ⚡️ Sidebar
 
-Extends the div element giving it a Sidebar structure and behavior.
+Extends the div element giving it a Sidebar structure and behavior. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-sidebar)
+
 
 * ⚡️ Spinner
 
-Extends the div element giving it different configurations to act like a loading spinner.
+Extends the div element giving it different configurations to act like a loading spinner. | [DOC](https://github.com/felippe-regazio/web-elements/tree/master/source/el-spinner)
+
 
 ## Usage
 
-1. Add the polyfill which is needed by safari, and the dependencies in case you element needs one (only the el-mustache has a dependency)
-2. You must add the elements bundle CSS and JS to your document. See the folder `bundle`. This will allow you to use all elements on your doc.
-3. If you prefer to use the elements à la cart, you must add the element JS and CSS from the folder `elements`.
-4. You use the element as a normal HTML Element, but specify the name of the custom element inside the `is` attribute. You must see the documentation to know which tag to use as which `is` value to put on your tag.</p>
-5. See the element doc. to know about its methods, structure and super powers.
-6. You can check the elements usage examples seeing the ./index.html.
+The folder "elements" inside the project contains each element separated.  
+The folder "bundle" contains a single CSS and JS file that adds all elements.  
 
-**:book: Each element has its own documentation inside the `source/[element-name]` folder.**
+1. Add the Polyfill which is needed by safari, and the dependencies in case your element needs some. See on the element doc.
+2. Is highly recommended the use of a CSS Normalizer (there is one on the `vendor` folder, thx @Necolas)
+3. You must add the elements bundle CSS and JS to your document or, if you prefer, load a la carte by adding the element CSS and JS from "elements" folder.
+4. You may use the element adding a normal HTML TAG and specifying the name of the custom element inside the `is` attribute. For example: `is="el-accordion"`.
+5. Each element extends a specific HTML EL (tag). See the docs or examples to know which HTML TAG to use.
 
 As customized built-in elements inherits from basic HTML elements, you can specify them via HTML or create them via JavaScript:
 
@@ -67,9 +81,10 @@ The above element gives the div new powers using `my-element` capabilities. That
 document.createElement("div", { is: "my-element" });
 ```
 
-**You can add all elements adding a single bundle to your document, or you can add only the elements that you need. The bundle is in the folder `bundle`. You must add the elements.min.css and elements.min.js files. If you want to pick a la carte, you can add the elements on the folder `elements`. You also need to add the element JS and CSS files.**
+## Examples
 
-Is highly recommended the use of a CSS Normalizer (there is one on the `vendor` folder, thx @Necolas), and a Polyfill which is discussed on section "Polyfill" of this README. You must add the Polyfill before the elements scripts.
+You see some live examples on https://felippe-regazio.github.io/web-elements/.  
+You can check some usage examples on the element Documentation MD file. See the links on **Elements List**.  
 
 ## Styling
 
@@ -78,18 +93,18 @@ As the elements are focused on Behavior, they're initial style are really simple
 As the elements are add on the initial context, don't use a Shadow DOM or custom tag names, there is no hassle to style it. You just add your styles. A cool thing about it is that you can also use the `[is]` attribute to target the elements. For example:
 
 ```html
-	<div is="el-lightbox">
-		...
-	</div>
+<div is="el-lightbox">
+	...
+</div>
 
-	<style>
-		[is="el-lightbox"] {
-			...
-		}
-		[is="el-lightbox"] div:fist-child {
-			...
-		}
-	</style>
+<style>
+	[is="el-lightbox"] {
+		...
+	}
+	[is="el-lightbox"] div:fist-child {
+		...
+	}
+</style>
 ```
 
 Classes and attributes are also supported, just add them. You're still dealing with a simple HTML Standard element, but with some extra power.
@@ -108,9 +123,9 @@ Classes and attributes are also supported, just add them. You're still dealing w
 
 ## Custom Elements?
 
-Custom elements are a specification part of the Web Components:
+Here's the MDN definition:
 
-> Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes (MDN).
+> Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes.
 
 # Polyfill
 
