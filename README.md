@@ -1,6 +1,6 @@
 # Custom Elements Collection
 
-This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
+This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API -
 
 ## Elements List
 
@@ -46,9 +46,12 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomo
 
 ## Usage
 
-1. 
+1. Add the polyfill which is needed by safari, and the dependencies in case you element needs one (only the el-mustache has a dependency)
 2. You must add the elements bundle CSS and JS to your document. See the folder `bundle`. This will allow you to use all elements on your doc.
 3. If you prefer to use the elements à la cart, you must add the element JS and CSS from the folder `elements`.
+4. You use the element as a normal HTML Element, but specify the name of the custom element inside the `is` attribute. You must see the documentation to know which tag to use as which `is` value to put on your tag.</p>
+5. See the element doc. to know about its methods, structure and super powers.
+6. You can check the elements usage examples seeing the ./index.html.
 
 **:book: Each element has its own documentation inside the `source/[element-name]` folder.**
 

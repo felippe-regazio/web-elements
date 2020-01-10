@@ -1,1 +1,1 @@
-[is=el-lazyimg][data-blur]:not([data-loaded]){-webkit-filter:blur(3px);filter:blur(3px)}[is=el-lazyimg][data-loading]{-webkit-transition:.4s;transition:.4s}
+[is=el-lazyimg]{max-width:100%}[is=el-lazyimg][data-blur]:not([data-loaded]){-webkit-filter:blur(3px);filter:blur(3px)}[is=el-lazyimg][data-loading]{-webkit-transition:.4s;transition:.4s}

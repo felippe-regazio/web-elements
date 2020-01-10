@@ -1,4 +1,5 @@
 [is="el-lazyimg"] {
+	max-width: 100%;
 	&[data-blur]:not([data-loaded]) {
 		filter: blur(3px);
 	}

@@ -6,440 +6,244 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="vendor/css-normalize/normalize.css">
     <link rel="stylesheet" type="text/css" href="bundle/elements.min.css">
-    <style type="text/css">body {font-family: Helvetica;}.container {padding: 10px;margin: 0 auto;max-width: 1200px;position:relative;}</style>
+
+    <style type="text/css">
+        body {
+            font-family: Helvetica;
+            padding: 100px 0;
+        }
+        .container {
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1200px;
+            position:relative;
+        }
+        [is="el-accordion"] pre {
+            margin: 0 -16px;
+            border-top: dashed 2px #ccc;
+            overflow-x: scroll;
+            margin-top: 14px;
+        }
+        h2 {
+            margin-top: 46px;
+        }
+    </style>
   </head>
   <body>
 
-    <header is="el-header" data-on:hide="" data-autohide>Page Header Testing</header>
-
-    <script type="text/javascript">
-        document.addEventListener('el-header-show', function (e) {
-            console.log(e);
-        })
-    </script>
+    <div is="el-header" data-autohide>
+        <span><b>Built-In Elements Collection</b></span>
+    </div>
 
     <div class="container">
 
-        <h2>Sidebar</h2>
+        <h2>About</h2>
 
-        <div is="el-sidebar" id="sidebar1" data-right>
-            <section>
-                <header>
-                    <span>Header Text</span>
-                </header>
-                <div class="has-padding">
-                    <span>Sidebar Items</span>
-                </div>
-                <footer>
-                    <span>Footer Text</span>
-                </footer>
-            </section>
+        <p>
+            This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
+        </p>
+
+        <p>
+            The elements on this page has a very minimal style and a rich and complex behavior. The intention here is encapsulate a rich set of complex behavior elements and let you free to style them as your want/need. The page you are seeing is almost completely made with built-in elements.
+        </p>
+
+        <p>
+            This page makes use of the elements collection to provide a set of examples and demonstrate its powers. The use is very simple: just an HTML tag with a `is` attribute telling how the tag will be extended. Built-in custom elements are a specification part of the Web Components official spec. You can check the github documentation of this collection for further information.
+        </p>
+
+        <div style="text-align:center">
+            <br/>
+            <a href="https://github.com/felippe-regazio/web-elements">
+                <button>SEE ON GITHUB</button>
+            </a>
         </div>
-
-        <script type="text/javascript">
-            document.addEventListener('sidebar-open', sb => {
-                console.log(sb);
-            });
-        </script>
-
-        <button onclick="sidebar1('open')">Sidebar</button>
-
-        <h2>Card</h2>
-
-
-        <div is="el-card" onclick="lightbox1('open'); return false" data-hoverble>
-          <img src="http://picsum.photos/300">
-          <div>
-            <h4>This will open a lightbox</h4>
-            <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
-          </div>
-        </div>
-
-        <a href="">
-            <div is="el-card">
-              <img src="http://picsum.photos/500">
-              <div>
-                <h4>This one is a link</h4>
-                <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
-              </div>
-            </div>
-        </a>
-
-        <div is="el-card">
-          <img src="http://picsum.photos/700">
-          <div>
-            <h4>Card Title</h4>
-            <p>Voluptate ut dolore incididunt sint ex adipisicing officia nulla labore laborum dolore pariatur proident dolor officia nisi magna reprehenderit aliquip ullamco velit ex commodo sed do excepteur ullamco dolore mollit et mollit reprehenderit elit dolore ex.</p>
-          </div>
-        </div>
-
-        <!--  -->
-
-        <h2>Accordion</h2>
-
-        <div is="el-accordion" data-summary="Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna">
-          <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
-        </div>
-
-        <script type="text/javascript">function ex (el) {alert(el.innerHTML)}</script>
-
-        <div is="el-accordion" data-summary="Accordion Test 2" data-on:open="ex" data-on:close="ex">
-          <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
-            <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>          
-        </div>
-
-
-        <div is="el-accordion" data-summary="Accordion Test 3" data-expand>
-          <p>Id occaecat esse aliquip magna cupidatat proident excepteur amet duis qui consectetur in ut sit sed magna incididunt ullamco et duis aliquip officia dolore consectetur est elit.</p>
-        </div>
-
-        <!--  -->
 
         <br/>
-        <h2>Lightbox</h2>
 
-        <div id="lightbox1" is="el-lightbox" data-boxed>
-            <section>
-                <header>
-                    <span>Header Text</span>
-                </header>
+        <h2>Examples</h2>
+
+        The Accordion element is used to construct this list. Also you can see the Header element on top of this page.
+        <br/><br/>
+
+        <div is="el-accordion" data-summary="Card (el-card)" class="example">
+
+            <div is="el-card">
                 <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <h4>This is a card</h4>
+                    <p>See the card documentation on <a href=""><b>github</b></a></p>
                 </div>
-                <footer>
-                    <button onclick="lightbox1('close')">Ok</button>
-                </footer>
-            </section>
+            </div>
         </div>
 
-        <button onclick="lightbox1('open')">Lightbox</button>
+        <div is="el-accordion" data-summary="Image View (el-imgview)" class="example">
 
-        <script type="text/javascript">
-            document.addEventListener('lightbox-open', lb => {
-                console.log(lb);
-            });
-        </script>
-
-        <br/><br/>
-        <h2>Lazy Image</h2>
-
-        <style type="text/css">
-            .image-example {
-                max-width: 300px;
-            }
-            .image-example img {
-                max-width: 100%;
-            }
-        </style>
-
-        <div class='image-example'>
-            <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000" data-blur/>
-        </div>
-
-        <br/><br/>
-        <h2>Image View</h2>
-
-        <div class='image-example'>
+            <p>Click on the image</p>
             <img is="el-imgview" src="http://picsum.photos/id/180/300" data-view="http://picsum.photos/id/180/5000"/>
         </div>
 
-        <br/><br/>
-        <h2>Mustache Element</h2>
-
-        <div is="el-card">
-            <div is="el-mustache" data-json='https://restcountries.eu/rest/v2/alpha/col' data-mock="large" data-lazy>
-                <h1>{{name}} {{alpha2Code}}</h1>
-                <h4>Capital {{capital}}</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div is="el-accordion" data-summary="Lazy Image (el-lazyimg)" class="example">
+            <div style="max-width: 300px">
+                <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000"/>
             </div>
         </div>
 
-        <div is="el-card">
-            <div is="el-mustache" data-json='{"name":"Brasil", "alpha2Code":"BR", "capital":"Brasília"}' data-mock>
+        <div is="el-accordion" data-summary="Lightbox (el-lightbox)" class="example">
+            <div id="lightbox1" is="el-lightbox" data-boxed>
+                <section>
+                    <header>
+                        <span>Header Text</span>
+                    </header>
+                    <div>
+                       This is the lightbox
+                    </div>
+                    <footer>
+                        <button onclick="lightbox1('close')">Ok</button>
+                    </footer>
+                </section>
+            </div>
+            <button onclick="lightbox1('open')">Open Lightbox</button>
+        </div>
+
+        <div is="el-accordion" data-summary="Mustache DIV (el-mustache)" class="example">
+            <div is="el-mustache" data-json='{"name":"Brasil", "alpha2Code":"BR", "capital":"Brasília"}'>
                 <h1>{{name}} {{alpha2Code}}</h1>
                 <h4>Capital {{capital}}</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
             </div>
         </div>
 
-        <div is="el-card">
-            <div is="el-mustache" data-json='{"name":"Russia", "alpha2Code":"RU", "capital":"Moscou"}' data-template="el-mustache-example" data-mock data-debug></div>
+        <div is="el-accordion" data-summary="Read More (el-readmore)" class="example">
+            <div is="el-readmore" data-label="More|Minus">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <ins>
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ins>
+                </p>
+            </div>
         </div>
 
-        <template id="el-mustache-example">
-            <h1>{{name}} {{alpha2Code}}</h1>
-            <h4>Capital {{capital}}</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </template>
-
-        <br/><br/>
-        <h2>Spinner</h2>
-
-        <div is="el-spinner" data-color="purple"></div>
-        <div is="el-spinner" data-color="green" data-single></div>
-        <div is="el-spinner" data-color="cyan" data-outline></div>
-        <div is="el-spinner" data-color="red" data-outline data-single></div>
-        <div is="el-spinner" data-color="black" data-size="100"></div>
-
-        <br/><br/>
-        <h2>Read More</h2>
-
-        <div is="el-readmore" data-label="More|Minus" data-on:open="ex">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <ins>
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ins>
-            </p>
+        <div is="el-accordion" data-summary="Sidebar (el-sidebar)" class="example">
+            <div is="el-sidebar" id="sidebar1" data-right>
+                <section>
+                    <header>
+                        <span>Header Text</span>
+                    </header>
+                    <div class="has-padding">
+                        <span>Sidebar Items</span>
+                    </div>
+                    <footer>
+                        <span>Footer Text</span>
+                    </footer>
+                </section>
+            </div>
+            <button onclick="sidebar1('toggle')">Toggle Sidebar</button>
         </div>
 
-        <div is="el-readmore" data-label="More|Minus" data-expanded>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <ins>
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ins>
-            </p>
+        <div is="el-accordion" data-summary="Spinner (el-spinner)" class="example">
+            <div is="el-spinner" data-color="purple"></div>
+            <div is="el-spinner" data-color="green" data-single></div>
+            <div is="el-spinner" data-color="cyan" data-outline></div>
+            <div is="el-spinner" data-color="red" data-outline data-single></div>
+            <div is="el-spinner" data-color="black" data-size="100"></div>
         </div>
+
+        <h2>Documentation</h2>
+
+        <p>Github collection documentation, fork, issues and further information <a href="https://github.com/felippe-regazio/web-elements">HERE</a></p>
+        <p>Click on the element name to see its complete single documentation on github</p>
+
+        <div is="el-accordion" data-summary="Elements" data-expand>
+            <ul>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-accordion" target="_blank">
+                        <h4>el-accordion</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-card" target="_blank">
+                        <h4>el-card</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-header" target="_blank">
+                        <h4>el-header</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-imgview" target="_blank">
+                        <h4>el-imgview</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-lazyimg" target="_blank">
+                        <h4>el-lazyimg</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-lightbox" target="_blank">
+                        <h4>el-lightbox</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-mustache" target="_blank">
+                        <h4>el-mustache</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-readmore" target="_blank">
+                        <h4>el-readmore</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-sidebar" target="_blank">
+                        <h4>el-sidebar</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-spinner" target="_blank">
+                        <h4>el-spinner</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <h2>Usage</h2>
+
+        <p>You must load the proper JS and CSS files on the page. Add the polyfill which is needed by safari, and the dependencies in case you element needs one (only the el-mustache has a dependency).</p>
+
+        <p>You use the element as a normal HTML Element, but specify the name of the custom element inside the `is` attribute. You must see the documentation to know which tag to use as which `is` value to put on your tag.</p>
+
+        <p>See the documentation on github for further information. You also use this page as a guide </p>
+
+        <h2>Styling</h2>
+
+        <p>
+            This is a standard HTML elements extended, so you can freely style it, apply your own classes, ids, attributes, etc. You can manage/change the Lightbox size, position, z-index and everything else by CSS. You may use the [is="{element-name}"] element selector to target the element on your CSS.
+        </p>
+
+        <h2>By Felippe Regazio</h2>
+
+        <p>If you want to buy me a coffee, make critics or just send me something, you can send an e-mail to:</p>
+        <p>felippe.moraes [at] zoho.com</p>
+
+        <br/><br/><br/>
+        <hr/>
+
+        Web Elements Collections is under MIT License
+
     </div>
 
 
-    <!-- SCRIPTS -->
+    <script type="text/javascript">
+        // automatically adds a code example on every accordion at "some examples"
+        document.querySelectorAll('[is="el-accordion"].example').forEach(example => {
+            const code = example.innerHTML;
+            example.insertAdjacentHTML('beforeend', `<pre><code></code></pre>`);
+            example.querySelector('pre code').innerText = code;
+        });
+    </script>
 
     <script type="text/javascript" src="vendor/polyfill-built-in-element/min.js"></script>
     <script type="text/javascript" src="vendor/mustache-js/mustache.min.js"></script>
