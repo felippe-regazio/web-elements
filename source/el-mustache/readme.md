@@ -1,18 +1,17 @@
 # el-mustache
 
-This element provides a HTML div which has a built-in mustache template engine. The element acts like a template by accepting a json, parsing it allowing its data to be used to build the view block.
+This element provides a HTML DIV which has a built-in `Mustache Template Engine`. The element accepts a json as attribute, then parse it allowing the data to be used on the DIV content using the Mustache engine.
 
 # Dependency
 
 This elements depends of the `mustache.js` template engine. You must add the mustache.js script before this element js file on your document. You can find a mustache.js script on the vendor folder, or here:
 
-https://github.com/janl/mustache.js
-
-Its highly recommend for you to read the `Mustache Documentation`. Once you correctly setup the element, you can use all the mustache.js features inside your `el-mustache` div.
+Its highly recommend for you to read the `Mustache.js Documentation`. Once you correctly setup the element, you can use all the mustache.js features inside your `el-mustache` div - Mustache Doc: https://github.com/janl/mustache.js
 
 # Usage
 
-If you are not using the `bundle` JS and CSS version of this collection, you may add the element .js and .css files to your document. The files are on the `elements/el-mustache/` folder. Of you can add all elements by adding the files on the `bundle` folder.
+You must add the project's `bundle` JS and CSS from the bundle directory - this will enable all elements.  
+Or you can add the JS and CSS files of the given element only, located at `elements/element-name`.
 
 1. The root element must be a div with `is="el-mustache"`.
 2. The element must have the attribute `data-json` with data in json format.
@@ -101,11 +100,11 @@ Inline element events.
 | data-on:error | Triggered when an error accurs |
 | data-on:loaded | Triggered when the content is loaded/parsed |
 
-1. This events must be added on the root mustache element. The parameter must be a function name.
-2. The function must be on the `window` scope.
+1. This events must be added on the root accordion element. The parameter must be a function name.
+2. The function must be on the `window` scope. 
 3. No code will be evaluated if used as a parameter to this events.
-4. No argument will must be passed to this function, just a name reference.
-5. The element will automatically passed as first (unique) parameter to your function
+4. No argument must be passed to this function, just a name reference.
+5. The element will be automatically passed as first (unique) parameter to your callback
 
 Example:
 
@@ -125,4 +124,4 @@ Example:
 # Styling
 
 This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc.
-You may use the `[is="el-mustache"]` element selector to target this element on your CSS.
+You may use the `[is="el-mustache"]` element selector to target this element on your CSS and JS.
