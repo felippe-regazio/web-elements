@@ -8,52 +8,52 @@ Built-In Web Elements are part of the "Web Components" specs. They allow us to e
 
 ## Elements List
 
-* ⚡️ Accordion
+* ⚡️ **Accordion**
  
 Extends the div element giving it an Accordion structure and behavior | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-accordion)
 
 
-* ⚡️ Card
+* ⚡️ **Card**
 
 Extends the div element giving it a Card structure and behavior. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-card)
 
 
-* ⚡️ Header
+* ⚡️ **Header**
 
 Extends the header element giving it a set of features as fixed on top and auto hide on scroll. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-header)
 
 
-* ⚡️ Image Viewer
+* ⚡️ **Image Viewer**
 
 Extends the img element giving it a full screen view, the image will be showed on a lightbox when clicked. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-imgview)
 
 
-* ⚡️ Lazy Load IMG
+* ⚡️ **Lazy Load IMG**
 
 Extends the img element giving it a lazy load behavior. The images will be only loaded when visible. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lazyimg)
 
 
-* ⚡️ Lightbox
+* ⚡️ **Lightbox**
 
 Extends the div element giving it a Lightbox behavior. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-lightbox)
 
 
-* ⚡️ Mustache Template Div
+* ⚡️ **Mustache Template Div**
 
 Extends the div element giving it a template engine capabilities. The div will be capable to parse json to fill its content. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-mustache)
 
 
-* ⚡️ Read More
+* ⚡️ **Read More**
 
 Extends the div element giving the content inside a Read More feature. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-readmore)
 
 
-* ⚡️ Sidebar
+* ⚡️ **Sidebar**
 
 Extends the div element giving it a Sidebar structure and behavior. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-sidebar)
 
 
-* ⚡️ Spinner
+* ⚡️ **Spinner**
 
 Extends the div element giving it different configurations to act like a loading spinner. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-spinner)
 
