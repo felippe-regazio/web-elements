@@ -97,11 +97,11 @@
                        This is the lightbox
                     </div>
                     <footer>
-                        <button onclick="lightbox1('close')">Ok</button>
+                        <button onclick="lightbox1('hide')">Ok</button>
                     </footer>
                 </section>
             </div>
-            <button onclick="lightbox1('open')">Open Lightbox</button>
+            <button onclick="lightbox1('show')">Open Lightbox</button>
         </div>
 
         <div is="el-accordion" data-summary="Mustache DIV (el-mustache)" class="example">
@@ -216,6 +216,20 @@
         <p>You use the element as a normal HTML Element, but specify the name of the custom element inside the `is` attribute. You must see the documentation to know which tag to use as which `is` value to put on your tag.</p>
 
         <p>See the documentation on github for further information. You also use this page as a guide </p>
+
+        <h2>Benefits</h2>
+
+        <ul>
+            <li>Vanilla JS. No dependencies. No framework.</li>
+            <li>Add all elements, or only those that you will need.</li>
+            <li>Behavior driven, you are free to add your styles.</li>
+            <li>No Shadow-DOM</li>
+            <li>Inherit from Standards, inheriting all the common elements structure</li>
+            <li>Semantic HTML with no strange custom tag names</li>
+            <li>SEO Friendly and Accessibility friendly</li>
+            <li>Reusable and Minimal</li>
+            <li>Provides separation of concerns between data, behavior and style.</li>
+        </ul>
 
         <h2>Styling</h2>
 
