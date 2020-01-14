@@ -7,9 +7,27 @@ const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
 const clean_dir = require('gulp-clean');
+const edit = require('gulp-append-prepend');
 
 const elements = './elements';
-const bundle = './bundle';
+const bundle = './';
+
+// define a UMD (Universal Module Definition)
+// as wrapper to every single element, and as
+// a single wrapper to the bundle
+
+const umd_init = `
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['dependency'], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory(require('dependency'));
+    } else {
+        root.returnExports = factory(root.dependency);
+    }
+}(this, function (dependency) {`;
+
+const umd_end = '}))';
 
 // construct "elements" a la carte
 
@@ -26,6 +44,8 @@ gulp.task('scripts', function(){
 	return gulp.src('./source/**/*.js')
 	.pipe(plumber(true))
 	.pipe(babel({presets: ['@babel/preset-env']}))
+  .pipe(edit.prependText(umd_init))
+  .pipe(edit.appendText(umd_end))
 	.pipe(uglify_js())
 	.pipe(gulp.dest(elements));
 });
@@ -35,14 +55,18 @@ gulp.task('scripts', function(){
 gulp.task('bundle-css', function(){
 	return gulp.src(`${elements}/**/*.css`)
 	.pipe(plumber(true))
-	.pipe(concat('elements.min.css'))
+	.pipe(concat('elements.css'))
 	.pipe(gulp.dest(bundle));
 });
 
 gulp.task('bundle-js', function(){
-	return gulp.src(`${elements}/**/*.js`)
+	return gulp.src(`source/**/*.js`)
 	.pipe(plumber(true))
-	.pipe(concat('elements.min.js'))
+	.pipe(babel({presets: ['@babel/preset-env']}))
+	.pipe(concat('elements.js'))
+  .pipe(edit.prependText(umd_init))
+  .pipe(edit.appendText(umd_end))
+	.pipe(uglify_js())
 	.pipe(gulp.dest(bundle));
 });
 
@@ -58,7 +82,7 @@ gulp.task('watch', function(done) {
 });
 
 gulp.task('clean', function(done) {
-	return (process.argv[2] === '--clean') ? gulp.src([bundle, elements]).pipe(clean_dir()) : done();
+	return (process.argv[2] === '--clean') ? gulp.src([elements]).pipe(clean_dir()) : done();
 });
 
 gulp.task('default', gulp.series([

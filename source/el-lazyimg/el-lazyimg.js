@@ -1,3 +1,4 @@
+
 customElements.define('el-lazyimg', class extends HTMLImageElement {
 
 	constructor () {

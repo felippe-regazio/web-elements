@@ -1,3 +1,4 @@
+
 customElements.define('el-mustache', class extends HTMLDivElement {
 
 	constructor () {

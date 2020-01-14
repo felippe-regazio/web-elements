@@ -2,7 +2,7 @@
   "name": "web-elements",
   "version": "1.0.0",
   "description": "Minimalistic web components collection",
-  "main": "Gulpfile.js",
+  "main": "elements.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create": "node create.js",
@@ -39,6 +39,7 @@
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {
+    "gulp-append-prepend": "^1.0.8",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
     "gulp-cssnano": "^2.1.3",

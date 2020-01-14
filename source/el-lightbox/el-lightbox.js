@@ -1,3 +1,4 @@
+
 customElements.define('el-lightbox', class extends HTMLDivElement {
 
 	constructor () {
