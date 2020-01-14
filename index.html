@@ -21,11 +21,15 @@
         [is="el-accordion"] pre {
             margin: 0 -16px;
             border-top: dashed 2px #ccc;
-            overflow-x: scroll;
             margin-top: 14px;
         }
         h2 {
             margin-top: 46px;
+        }
+        pre {
+            padding: 10px;
+            overflow-x: auto;
+            background-color: #f1f1f1;
         }
     </style>
   </head>
@@ -37,28 +41,76 @@
 
     <div class="container">
 
-        <h2>About</h2>
+        <h2>📌 About</h2>
 
         <p>
             This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
         </p>
 
         <p>
-            The elements on this page has a very minimal style and a rich and complex behavior. The intention here is encapsulate a rich set of complex behavior elements and let you free to style them as your want/need. The page you are seeing is almost completely made with built-in elements.
+            As said by MDN: "Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps".
         </p>
 
         <p>
-            This page makes use of the elements collection to provide a set of examples and demonstrate its powers. The use is very simple: just an HTML tag with a `is` attribute telling how the tag will be extended. Built-in custom elements are a specification part of the Web Components official spec. You can check the github documentation of this collection for further information.
-        </p>
+            Built-In Web Elements are part of the "Web Components" specs. They allow us to extend a standard HTML components and give it new powers. The use is very simple: just an HTML tag with a `is="my-element"` attribute telling how the tag will be extended giving it new super powers. Built-in custom elements are a specification part of the Web Components official spec. You can check the <a href="https://github.com/felippe-regazio/web-elements" target="_blank">Github Documentation</a> of this collection for further information.
+        </p>        
 
         <div style="text-align:center">
-            <br/>
-            <a href="https://github.com/felippe-regazio/web-elements">
+            <br/><br/>
+            <a href="https://github.com/felippe-regazio/web-elements" target="_blank">
                 <button>SEE ON GITHUB</button>
             </a>
         </div>
 
-        <br/>
+        <h2>📌 Motivation</h2>
+
+        <p>
+            This Elements Collection to avoid painfully repetition of JS and CSS coding common of UI elements structures and behavior with a minimalistic approach:
+            <br/>
+
+            <ul>
+                <li>
+                    <p>
+                        <b>Almost no style</b> (behavior driven style), letting you free to add your visual identity.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <b>Single purpose elements</b>. Every element must do only one thing. Commonly it encapsulates complex behaviors.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <b>Simplicity</b>. The code is very simple. The largest component source has 100 lines of code. There is no complex multi-purpose largely configurable element.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <b>Agnostic</b>. That means no frameworks required. You can use them anywhere, just add the `is="el-name"` attribute to give new powers to a standard HTML element.
+                    </p>
+                </li>
+            </ul>
+        </p>
+
+        <h2>📌 Usage</h2>
+
+        <p>🚧 Add the polyfill which is needed by safari, and the dependencies in case you element needs one (only the el-mustache has a dependency). You can find the polyfill on project's "vendor" directory. <a href="https://hackernoon.com/extending-built-in-elements-9dce404b75b4" target="_blank"> Here is an article about this polyfill</a></p>
+
+        <p>Now You must add the element JS and CSS files on your documents. You can also add a bundle version with loads all components in a single CSS and JS files. If you prefer to use elements a la carte, consider to add them from the "elements" project folder, otherwise, load the JS and CSS files from the "bundle" folder</p>
+
+        <p>Now you must add the proper tag on your document and use the <b>is</b> attribute to determine the element extension</p>
+
+        <p>Example:</p>
+
+        <pre>
+            <code>
+                &lt;div is="el-accordion" data-summary="Accordion Summary"&gt;
+                    &lt;p&gt;Hello World&lt;/p&gt;
+                &lt;/div&gt;</code>
+        </pre>
+
+        <p>Note the "is" attribute determine that the div will have the "accordion" behavior. See the docs for a complete list and proper usage of all the elements</p>
+        <p>See the documentation on github for further information. You also use this page as a guide </p>        
 
         <h2>Examples</h2>
 
@@ -149,12 +201,12 @@
             <div is="el-spinner" data-color="black" data-size="100"></div>
         </div>
 
-        <h2>Documentation</h2>
+        <h2>📌 Documentation</h2>
 
-        <p>Github collection documentation, fork, issues and further information <a href="https://github.com/felippe-regazio/web-elements">HERE</a></p>
+        <p>Github collection documentation, fork, issues and further information <a href="https://github.com/felippe-regazio/web-elements"><b>HERE</b></a></p>
         <p>Click on the element name to see its complete single documentation on github</p>
 
-        <div is="el-accordion" data-summary="Elements" data-expand>
+        <div is="el-accordion" data-summary="<b>Github Docs</b>" data-expand>
             <ul>
                 <li>
                     <a href="https://github.com/felippe-regazio/web-elements/tree/master/source/el-accordion" target="_blank">
@@ -209,15 +261,7 @@
             </ul>
         </div>
 
-        <h2>Usage</h2>
-
-        <p>You must load the proper JS and CSS files on the page. Add the polyfill which is needed by safari, and the dependencies in case you element needs one (only the el-mustache has a dependency).</p>
-
-        <p>You use the element as a normal HTML Element, but specify the name of the custom element inside the `is` attribute. You must see the documentation to know which tag to use as which `is` value to put on your tag.</p>
-
-        <p>See the documentation on github for further information. You also use this page as a guide </p>
-
-        <h2>Benefits</h2>
+        <h2>📌 Benefits</h2>
 
         <ul>
             <li>Vanilla JS. No dependencies. No framework.</li>
@@ -231,14 +275,24 @@
             <li>Provides separation of concerns between data, behavior and style.</li>
         </ul>
 
-        <h2>Styling</h2>
+        <h2>📌 Styling</h2>
 
         <p>
             This is a standard HTML elements extended, so you can freely style it, apply your own classes, ids, attributes, etc. You can manage/change the Lightbox size, position, z-index and everything else by CSS. You may use the [is="{element-name}"] element selector to target the element on your CSS.
         </p>
 
-        <h2>By Felippe Regazio</h2>
+        <pre><code>
+            [is="el-accordion"] {
+                color: #ffffff;
+                background-color: #000000;
+            }
+        </code></pre>
 
+        <h2>📌 Footprint</h2>
+
+        <br/>
+
+        <p>👾 Web Elements Collection by Felippe Regazio</p>
         <p>If you want to buy me a coffee, make critics or just send me something, you can send an e-mail to:</p>
         <p>felippe.moraes [at] zoho.com</p>
 

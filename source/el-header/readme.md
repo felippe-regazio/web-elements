@@ -1,11 +1,11 @@
 # el-header
 
-Extends the "header" HTML element and provides extra features to it. The header has position fixed with top:0 by default. 
+Extends the "HEADER" HTML element and provides extra features to it. The `el-header` has position fixed with top:0 by default. 
 
 # Usage
 
-If you are not using the `bundle` JS and CSS version of this collection, you may add the element .js and .css files to your document.
-The files are on the `elements/el-header/` folder. Of you can add all elements by adding the files on the `bundle` folder.
+You must add the project's `bundle` JS and CSS from the bundle directory - this will enable all elements.  
+Or you can add the JS and CSS files of the given element only, located at `elements/element-name`.
 
 ```html
 <header is="el-header" data-on:hide="" data-on:show="ex" data-autohide>
@@ -55,11 +55,11 @@ Inline element events.
 | data-on:show | Triggered always when the data-autohide is setted and the header has been showed |
 | data-on:hide | Triggered always when the data-autohide is setted and the header has been hidden |
 
-1. This events must be added on the root header element. The parameter must be a function name.
+1. This events must be added on the root accordion element. The parameter must be a function name.
 2. The function must be on the `window` scope. 
 3. No code will be evaluated if used as a parameter to this events.
-4. No argument will must be passed to this function, just a name reference.
-5. The element will automatically passed as first (unique) parameter to your function
+4. No argument must be passed to this function, just a name reference.
+5. The element will be automatically passed as first (unique) parameter to your callback
 
 Example:
 
@@ -79,7 +79,7 @@ Example:
 # Styling
 
 This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc.
-You may use the `[is="el-header"]` element selector to target this element on your CSS.
+You may use the `[is="el-header"]` element selector to target this element on your CSS and JS.
 
 The header is fixed on top with left and top zero by default. The height will be automatically adjusted to the size of the content.
 If use are using data-autohide, a class `el-header--hidden` will be toggled on the header to set/unset the hiddens state on scroll.

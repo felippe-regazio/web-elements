@@ -1,10 +1,11 @@
 # el-card
 
-Provides a div with with card behavior to wrap elements.
+Provides a div with Card behavior.
 
 # Usage
 
-If you are not using the `bundle` JS and CSS version of this collection, you may add the element .js and .css files to your document. The files are on the `elements/el-card/` folder. Of you can add all elements by adding the files on the `bundle` folder. The root element must be a div with `is="el-card"` attribute.
+You must add the project's `bundle` JS and CSS from the bundle directory - this will enable all elements.  
+Or you can add the JS and CSS files of the given element only, located at `elements/element-name`.
 
 ```html
 <div is="el-card">
@@ -18,17 +19,17 @@ If you are not using the `bundle` JS and CSS version of this collection, you may
 
 # Structure
 
-* All the img tags that are a direct child of the el-card will be blocked.
+* All the `img` elements that are a direct child of the el-card will be blocked.
 * All the div tags that are a direct child of the el-card will have 16px padding.
-* If you wrap the card in a link (\<a> tag), the card will have hover state.
+* If you wrap the card in a link (\<a> tag), the card will have a hover state.
 
 # Attributes
 
 | Attr | Description |
 | --- | --- |
-| data-hoverble | Force a show-box effect on the card when hovered|
+| data-hoverble | Force a box-shadow effect on the card when hovered|
 
 # Styling
 
 This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc.
-You may use the `[is="el-card"]` element selector to target this element on your CSS.
+You may use the `[is="el-card"]` element selector to target this element on your CSS and JS.

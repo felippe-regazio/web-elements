@@ -1,11 +1,11 @@
 # el-lightbox
 
-Extends the "div" HTML element and provides Lightbox feature.
+Extends the "DIV" HTML element and provides a Lightbox feature.
 
 # Usage
 
-If you are not using the `bundle` JS and CSS version of this collection, you may add the element .js and .css files to your document.
-The files are on the `elements/el-lightbox/` folder. Of you can add all elements by adding the files on the `bundle` folder.
+You must add the project's `bundle` JS and CSS from the bundle directory - this will enable all elements.  
+Or you can add the JS and CSS files of the given element only, located at `elements/element-name`.
 
 ```html
 <div id="lightbox1" is="el-lightbox" data-boxed>
@@ -40,7 +40,7 @@ The files are on the `elements/el-lightbox/` folder. Of you can add all elements
 * The first child must be a `section` tag
 * The `section` must be have, respectively, a `header`, `div`, and `footer`.
 
-The header and footer will be fixed. The div inside the section must be the content.
+The header and footer will be fixed. The div inside the section must be the LB content.
 
 # Behavior
 
@@ -105,11 +105,11 @@ Inline element events.
 | data-on:show | Triggered when the given el-lightbox is showed |
 | data-on:hide | Triggered when the given el-lightbox is hidden |
 
-1. This events must be added on the root header element. The parameter must be a function name.
+1. This events must be added on the root accordion element. The parameter must be a function name.
 2. The function must be on the `window` scope. 
 3. No code will be evaluated if used as a parameter to this events.
-4. No argument will must be passed to this function, just a name reference.
-5. The element will automatically passed as first (unique) parameter to your function
+4. No argument must be passed to this function, just a name reference.
+5. The element will be automatically passed as first (unique) parameter to your callback
 
 Example:
 
@@ -138,4 +138,4 @@ Example:
 
 # Styling
 
-This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc. You can manage/change the Lightbox size, position, z-index and everything else by CSS. You may use the `[is="el-lightbox"]` element selector to target this element on your CSS. 
+This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc. You can manage/change the Lightbox size, position, z-index and everything else by CSS. You may use the `[is="el-lightbox"]` element selector to target this element on your CSS and JS. 

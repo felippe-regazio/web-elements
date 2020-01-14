@@ -1,11 +1,11 @@
 # el-spinner
 
-Extends the "div" HTML element and provides a configurable loading spinner.
+Extends the "DIV" HTML element and provides a configurable loading spinner.
 
 # Usage
 
-If you are not using the `bundle` JS and CSS version of this collection, you may add the element .js and .css files to your document.
-The files are on the `elements/el-spinner/` folder. Of you can add all elements by adding the files on the `bundle` folder.
+You must add the project's `bundle` JS and CSS from the bundle directory - this will enable all elements.  
+Or you can add the JS and CSS files of the given element only, located at `elements/element-name`.
 
 ```html
 <div is="el-spinner" data-color="red" data-outline data-single></div>
@@ -22,4 +22,4 @@ The files are on the `elements/el-spinner/` folder. Of you can add all elements 
 
 # Styling
 
-This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc. You can manage/change the spinner size, position, z-index and everything else by CSS. You may use the `[is="el-spinner"]` element selector to target this element on your CSS. 
+This is a standard HTML element extended, so you can freely style it, apply your own classes, ids, attributes, etc. You can manage/change the spinner size, position, z-index and everything else by CSS. You may use the `[is="el-spinner"]` element selector to target this element on your CSS and JS.
