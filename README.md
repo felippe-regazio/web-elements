@@ -4,12 +4,41 @@ This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomo
 
 As said by MDN: "Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps".
 
-Built-In Web Elements are part of the "Web Components" specs. They allow us to extend a standard HTML components and give it new powers. The use is very simple: just an HTML tag with a `is="my-element"` attribute telling how the tag will be extended giving it new super powers. Built-in custom elements are a specification part of the Web Components official spec. More info on - https://felippe-regazio.github.io/web-elements/
+Built-In Web Elements are part of the "Web Components" specs. They allow us to extend a standard HTML components and give it new powers. That means we don't rewrite an entire component just to add an accordion feature, we extend an existent HTML element and give it the accordion behavior. The use is very simple: just an HTML tag with a `is="my-element"` attribute telling how the tag will be extended giving it new super powers. Built-in custom elements are a specification part of the Web Components official spec.
+
+# Getting Started
+
+You have some options to add the components on your project:
+
+1. By adding the `elements.js` and `elements.css` bundle on your document. This will add all the elements.
+
+2. By adding "à la carte". You will add the JS and CSS files only for the elements that you want. You find this files on the "elements" directory of the project.
+
+3. Importing or requiring the desired element. You can import or require the `elements.js` and `elements.css` from the project root, or a single element from the "elements" directory.
+
+Obs: The `el-mustache` element has a dependency. Read the element docs for further information.
+
+# Polyfill
+
+🚧 Safari didn't implemented built-in elements. But there's no problem, you can find a polyfill on project's "vendor" directory. The polyfill was written by Andrea Giammarchi, and here's an article about how it works: https://hackernoon.com/extending-built-in-elements-9dce404b75b4.
+
+# Usage
+
+You must add the element HTML `tag` setting the `is` attribute to the desired element
+
+```html
+<div is="el-accordion" data-summary="Card (el-card)" class="example">
+  <h4>Accordion Example</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+</div>
+```
+
+<p>Note the `is` attribute determine that the div will have the "accordion" behavior. That could be an image so, like `<img is="el-lazyimg" ... >`. See the docs for a complete list and proper usage of each element</p>
 
 ## Elements List
 
 * ⚡️ **Accordion**
- 
+
 Extends the div element giving it an Accordion structure and behavior | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-accordion)
 
 
@@ -57,34 +86,10 @@ Extends the div element giving it a Sidebar structure and behavior. | [doc](http
 
 Extends the div element giving it different configurations to act like a loading spinner. | [doc](https://github.com/felippe-regazio/web-elements/tree/master/source/el-spinner)
 
-
-## Usage
-
-The folder "elements" inside the project contains each element separated.  
-The folder "bundle" contains a single CSS and JS file that adds all elements.  
-
-1. Add the Polyfill which is needed by safari, and the dependencies in case your element needs some. See on the element doc.
-2. Is highly recommended the use of a CSS Normalizer (there is one on the `vendor` folder, thx @Necolas)
-3. You must add the elements bundle CSS and JS to your document or, if you prefer, load a la carte by adding the element CSS and JS from "elements" folder.
-4. You may use the element adding a normal HTML TAG and specifying the name of the custom element inside the `is` attribute. For example: `is="el-accordion"`.
-5. Each element extends a specific HTML EL (tag). See the docs or examples to know which HTML TAG to use.
-
-As customized built-in elements inherits from basic HTML elements, you can specify them via HTML or create them via JavaScript:
-
-```html
-<div is="my-element"></div>
-```
-
-The above element gives the div new powers using `my-element` capabilities. That also means that my-element extends the div element. To create this same element via JavaScript you can do:
-
-```javascript
-document.createElement("div", { is: "my-element" });
-```
-
 ## Examples
 
-You can see some live examples on https://felippe-regazio.github.io/web-elements/.  
-You can check some usage examples on the element Documentation MD file. See the links on **Elements List**.  
+You can see some live examples on https://felippe-regazio.github.io/web-elements/.
+You can check some usage examples on the element Documentation MD file. See the links on **Elements List**.
 
 ## Styling
 
@@ -121,19 +126,6 @@ Classes and attributes are also supported, just add them. You're still dealing w
 8. Reusable and Minimal
 9. Provides separation of concerns between data, behavior and style.
 
-## Custom Elements?
-
-Here's the MDN definition:
-
-> Custom elements provide a way for authors to build their own fully-featured DOM elements. Although authors could always use non-standard elements in their documents, with application-specific behaviour added after the fact by scripting or similar, such elements have historically been non-conforming and not very functional. By defining a custom element, authors can inform the parser how to properly construct an element and how elements of that class should react to changes.
-
-# Polyfill
-
-:warning: Safari needs a Polyfill. You will find the polyfill on the `vendor` directory.
-Thanks to `Andrea Giammarchi` that developed an awesome polyfill that has less then 1kb:
-
-> Fully based on native customElements implementation, built-in element is a polyfill that weights less than 1 Kb, it leaves Chrome and Firefox completely untouched, and it uses modern features on Safari, which is why it’s so lightweight : https://hackernoon.com/extending-built-in-elements-9dce404b75b4
-
 # Development
 
 The source folder contains the source files of each element. The files will be packed into a single .min bundle at the "bundle" directory, and will be also distributed "a la carte" at the "elements" directory.
@@ -149,3 +141,7 @@ Use the command `npm run dev`. This will start a development watcher on the  fil
 ### To build
 
 Use the command `npm run build`. This will trigger the gulp taks from `gulpfile.js` and pack a new components build.
+
+### UMDJS
+
+The "building" process will automatically add the "Universal Module Definition" to the bundle JS files and to each element on the "elements" directory, allowing the elements to be required and imported.

@@ -10,8 +10,7 @@ Its highly recommend for you to read the `Mustache.js Documentation`. Once you c
 
 # Usage
 
-You must add the project's `bundle` JS and CSS from the bundle directory - this will enable all elements.  
-Or you can add the JS and CSS files of the given element only, located at `elements/element-name`.
+Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
 
 1. The root element must be a div with `is="el-mustache"`.
 2. The element must have the attribute `data-json` with data in json format.
@@ -101,7 +100,7 @@ Inline element events.
 | data-on:loaded | Triggered when the content is loaded/parsed |
 
 1. This events must be added on the root accordion element. The parameter must be a function name.
-2. The function must be on the `window` scope. 
+2. The function must be on the `window` scope.
 3. No code will be evaluated if used as a parameter to this events.
 4. No argument must be passed to this function, just a name reference.
 5. The element will be automatically passed as first (unique) parameter to your callback

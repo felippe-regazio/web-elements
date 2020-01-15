@@ -52,8 +52,8 @@
         </p>
 
         <p>
-            Built-In Web Elements are part of the "Web Components" specs. They allow us to extend a standard HTML components and give it new powers. The use is very simple: just an HTML tag with a `is="my-element"` attribute telling how the tag will be extended giving it new super powers. Built-in custom elements are a specification part of the Web Components official spec. You can check the <a href="https://github.com/felippe-regazio/web-elements" target="_blank">Github Documentation</a> of this collection for further information.
-        </p>        
+            Built-In Web Elements are part of the "Web Components" specs. They allow us to extend a standard HTML components and give it new powers. That means we don't rewrite an entire component just to add an accordion feature, we extend an existent HTML element and give it the accordion behavior. The use is very simple: just an HTML tag with a `is="my-element"` attribute telling how the tag will be extended giving it new super powers. Built-in custom elements are a specification part of the Web Components official spec. You can check the <a href="https://github.com/felippe-regazio/web-elements" target="_blank">Github Documentation</a> of this collection for further information.
+        </p>
 
         <div style="text-align:center">
             <br/><br/>
@@ -92,13 +92,26 @@
             </ul>
         </p>
 
+        <h2> Getting Started</h2>
+
+        You have some options to add the components on your project:
+
+        1. By adding the `elements.js` and `elements.css` bundle on your document. This will add all the elements.
+
+        2. By adding "à la carte". You will add the JS and CSS files only for the elements that you want. You find this files on the "elements" directory of the project.
+
+        3. Importing or requiring the desired element. You can import or require the `elements.js` and `elements.css` from the project root, or a single element from the "elements" directory.
+
+        Obs: The `el-mustache` element has a dependency. Read the element docs for further information.
+
+        <h2>📌 Polyfill</h2>
+
+        <p>🚧<p>
+        <p>Safari didn't implemented built-in elements. But there's no problem, you can find a polyfill on project's "vendor" directory. The polyfill was written by Andrea Giammarchi, and <a href="https://hackernoon.com/extending-built-in-elements-9dce404b75b4" target="_blank"> Here is an article about how it works.</a></p>
+
         <h2>📌 Usage</h2>
 
-        <p>🚧 Add the polyfill which is needed by safari, and the dependencies in case you element needs one (only the el-mustache has a dependency). You can find the polyfill on project's "vendor" directory. <a href="https://hackernoon.com/extending-built-in-elements-9dce404b75b4" target="_blank"> Here is an article about this polyfill</a></p>
-
-        <p>Now You must add the element JS and CSS files on your documents. You can also add a bundle version with loads all components in a single CSS and JS files. If you prefer to use elements a la carte, consider to add them from the "elements" project folder, otherwise, load the JS and CSS files from the "bundle" folder</p>
-
-        <p>Now you must add the proper tag on your document and use the <b>is</b> attribute to determine the element extension</p>
+        <p>You must add the element HTML `tag` setting the `is` attribute to the desired element</p>
 
         <p>Example:</p>
 
@@ -109,8 +122,7 @@
                 &lt;/div&gt;</code>
         </pre>
 
-        <p>Note the "is" attribute determine that the div will have the "accordion" behavior. See the docs for a complete list and proper usage of all the elements</p>
-        <p>See the documentation on github for further information. You also use this page as a guide </p>        
+        <p>Note the `is` attribute determine that the div will have the "accordion" behavior. That could be an image so, like `<img is="el-lazyimg" ... >`. See the docs for a complete list and proper usage of each element</p>
 
         <h2>Examples</h2>
 
