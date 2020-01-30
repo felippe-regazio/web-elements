@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Web Elements</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="vendor/css-normalize/normalize.css">
+    <link rel="stylesheet" type="text/css" href="elements.css">
+
+    <style type="text/css">
+        body {
+            font-family: Helvetica;
+            padding: 100px 0;
+        }
+        .container {
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 1200px;
+            position:relative;
+        }
+        [is="el-accordion"] pre {
+            margin: 0 -16px;
+            border-top: dashed 2px #ccc;
+            margin-top: 14px;
+        }
+        h2 {
+            margin-top: 68px;
+        }
+        pre {
+            padding: 10px;
+            overflow-x: auto;
+            background-color: #f1f1f1;
+        }
+    </style>
+  </head>
+  <body>
+
+    <header is="el-header" data-autohide>
+        <span><b>Built-In Elements Collection</b></span>
+    </header>
+
+    <div class="container">
+
+        <h2>📌 Examples</h2>
+
+
+        <p>Click <a href="https://github.com/felippe-regazio/web-elements/tree/master/source"><b>HERE</b></a> to go to the github elements folder and click on the element folder that you want to read the doc. Every element has its own readme.</p> 
+        <p>The Accordion element is used to construct this list. Also you can see the Header element on top of this page.</p>
+
+        <br/><br/>
+
+        <!-- CARD -->
+
+        <div is="el-accordion" data-summary="Card (el-card)" class="example">
+
+            <div is="el-card">
+                <div>
+                    <h4>This is a card</h4>
+                    <p>See the card documentation on <a href=""><b>github</b></a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMG VIEWER -->
+
+        <div is="el-accordion" data-summary="Image View (el-imgview)" class="example">
+
+            <p>Click on the image</p>
+            <img is="el-imgview" src="http://picsum.photos/id/180/300" data-view="http://picsum.photos/id/180/5000"/>
+        </div>
+
+        <!-- LAZY IMG -->
+
+        <div is="el-accordion" data-summary="Lazy Image (el-lazyimg)" class="example">
+            <div style="max-width: 300px">
+                <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000"/>
+            </div>
+        </div>
+
+        <!-- LIGHTBOX -->
+
+        <div is="el-accordion" data-summary="Lightbox (el-lightbox)" class="example">
+            <div id="lightbox1" is="el-lightbox" data-boxed>
+                <section>
+                    <header>
+                        <span>Header Text</span>
+                    </header>
+                    <div>
+                       This is the lightbox
+                    </div>
+                    <footer>
+                        <button onclick="lightbox1('hide')">Ok</button>
+                    </footer>
+                </section>
+            </div>
+            <button onclick="lightbox1('show')">Open Lightbox</button>
+        </div>
+
+        <!-- MUSTACHE DIV -->
+
+        <div is="el-accordion" data-summary="Mustache DIV (el-mustache)" class="example">
+            <div is="el-mustache" data-json='{"name":"Brasil", "alpha2Code":"BR", "capital":"Brasília"}'>
+                <h1>{{name}} {{alpha2Code}}</h1>
+                <h4>Capital {{capital}}</h4>
+            </div>
+        </div>
+
+        <!-- READ MORE -->
+
+        <div is="el-accordion" data-summary="Read More (el-readmore)" class="example">
+            <div is="el-readmore" data-label="More|Minus">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <ins>
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ins>
+                </p>
+            </div>
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <div is="el-accordion" data-summary="Sidebar (el-sidebar)" class="example">
+            <div is="el-sidebar" id="sidebar1" data-right>
+                <section>
+                    <header>
+                        <span>Header Text</span>
+                    </header>
+                    <div class="has-padding">
+                        <span>Sidebar Items</span>
+                    </div>
+                    <footer>
+                        <span>Footer Text</span>
+                    </footer>
+                </section>
+            </div>
+            <button onclick="sidebar1('toggle')">Toggle Sidebar</button>
+        </div>
+
+        <!-- SPINNER -->
+
+        <div is="el-accordion" data-summary="Spinner (el-spinner)" class="example">
+            <div is="el-spinner" data-color="purple"></div>
+            <div is="el-spinner" data-color="green" data-single></div>
+            <div is="el-spinner" data-color="cyan" data-outline></div>
+            <div is="el-spinner" data-color="red" data-outline data-single></div>
+            <div is="el-spinner" data-color="black" data-size="100"></div>
+        </div>
+
+        <!-- IMG INPUT PREVIEW -->
+
+        <div is="el-accordion" data-summary="Input Img Preview" class="example">
+            <input is="fm-imgpreview" type="file" name="image_input"/>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        // automatically adds a code example on every accordion at "some examples"
+        document.querySelectorAll('[is="el-accordion"].example').forEach(example => {
+            const code = example.innerHTML;
+            example.insertAdjacentHTML('beforeend', `<pre><code></code></pre>`);
+            example.querySelector('pre code').innerText = code;
+        });
+    </script>
+
+    <script type="text/javascript" src="vendor/polyfill-built-in-element/min.js"></script>
+    <script type="text/javascript" src="vendor/mustache-js/mustache.min.js"></script>
+    <script type="text/javascript" src="elements.js"></script>
+  </body>
+</html>

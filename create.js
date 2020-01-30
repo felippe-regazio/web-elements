@@ -11,7 +11,7 @@ if (!el_name) {
 	process.exit(0);
 }
 
-if (el_name.indexOf('el-') != 0) {
+if (el_name.indexOf('el-') != 0 && el_name.indexOf('fm-') != 0) {
 	el_name = `el-${el_name}`;
 }
 
