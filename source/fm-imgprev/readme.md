@@ -88,7 +88,7 @@ Inline element events.
 | data-on:image | Triggered when an image is loaded |
 | data-on:reset | Triggered when the box is reseted or a image has been removed |
 
-This events must be added on the `input` root element.
+This events must be added on the `input` type file element.
 
 # Styling
 
