@@ -152,7 +152,22 @@
         <!-- IMG INPUT PREVIEW -->
 
         <div is="el-accordion" data-summary="Input Img Preview" class="example">
-            <input is="fm-imgpreview" type="file" name="image_input"/>
+            <input 
+                is="fm-imgprev" 
+                type="file" 
+                name="image_input" 
+                data-height="300px" 
+                data-width="300px"
+                data-placeholder="Send Images"
+                data-fake-btn="Enviar Imagem"
+                data-fake-btn-classes="test btn classes"
+                data-persistent="true"
+                data-base64-input="adsfasdfasdfasdf"
+                data-max-size="3"
+                data-min-size="1"
+                data-max-size-error="Maximum Size 3MB"
+                data-min-size-error="Minimum Size 1MB"
+                data-initial-img="http://picsum.photos/300"/>
         </div>
 
     </div>
