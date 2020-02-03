@@ -8,22 +8,19 @@ Add the `elements.js` and `elements.css` source files from the project root on y
 Or you can load the JS and CSS files for a single element from the `elements` directory.
 
 ```html
-<input 
-    is="fm-imgprev" 
-    type="file" 
-    name="image_input" 
-    data-height="300px" 
-    data-width="300px"
-    data-placeholder="Send Images"
-    data-fake-btn="Enviar Imagem"
-    data-fake-btn-classes="test btn classes"
-    data-persistent="true"
-    data-base64-input="adsfasdfasdfasdf"
-    data-max-size="3"
-    data-min-size="1"
-    data-max-size-error="Maximum Size 3MB"
-    data-min-size-error="Minimum Size 1MB"
-    data-initial-img="http://picsum.photos/300"/>
+	<input 
+			is="fm-imgprev" 
+			type="file" 
+			name="image_input" 
+			data-height="300px" 
+			data-width="300px"
+			data-placeholder="Send Images"
+			data-fake-btn="Send Image"
+			data-fake-btn-classes="test btn classes"
+			data-max-size="3"
+			data-min-size="1"
+			data-max-size-error="Maximum Size 3MB"
+			data-min-size-error="Minimum Size 1MB"/>
 ```
 
 # Structure
@@ -33,27 +30,25 @@ The input will be wrapper on a new HTML structure and will become something like
 ```html
 <div class="fm-imgprev-wrapper" data-fake-btn="undefined" style="width: 300px; height: 300px;">
     <div class="fm-imgprev-preview" data-placeholder="Send Images">
-      <img/>
+    	<img>
+    	<span class="close"></span>
     </div>
     <div class="fm-imgprev-actions">
-      <input 
-        is="fm-imgprev" 
-        type="file" 
-        name="image_input" 
-        data-height="300px" 
-        data-width="300px"
-        data-placeholder="Send Images"
-        data-fake-btn="Enviar Imagem"
-        data-fake-btn-classes="test btn classes"
-        data-persistent="true"
-        data-base64-input="adsfasdfasdfasdf"
-        data-max-size="3"
-        data-min-size="1"
-        data-max-size-error="Maximum Size 3MB"
-        data-min-size-error="Minimum Size 1MB"
-        data-initial-img="http://picsum.photos/300"/>
-      <button class="fm-imgprev-fake-btn test btn classes">Enviar Imagem</button>
-      <input type="text" hidden="true" class="fm-imgprev-b64-input" name="image_input_base64">
+				<input 
+					is="fm-imgprev" 
+					type="file" 
+					name="image_input" 
+					data-height="300px" 
+					data-width="300px"
+					data-placeholder="Send Images"
+					data-fake-btn="Send Image"
+					data-fake-btn-classes="test btn classes"
+					data-max-size="3"
+					data-min-size="1"
+					data-max-size-error="Maximum Size 3MB"
+					data-min-size-error="Minimum Size 1MB"/>
+        <button class="fm-imgprev-fake-btn test btn classes">Send Image</button>
+        <input type="text" hidden="true" class="fm-imgprev-b64-input" name="image_input_base64">
     </div>
 </div>
 ```
