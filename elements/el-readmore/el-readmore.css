@@ -1,1 +1,0 @@
-[is=el-readmore] ins{text-decoration:none}[is=el-readmore]:not([data-expanded]) .el-readmore-has-ins::after{content:" ..."}[is=el-readmore]:not([data-expanded]) ins{display:none}[is=el-readmore] [data-expanded] .el-readmore-has-ins::after{display:none}[is=el-readmore] [data-expanded] ins{display:inline}

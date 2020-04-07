@@ -3,7 +3,7 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
-let els_dir = './source';
+let src_dir = './src';
 let el_name = process.argv[2];
 
 if (!el_name) {
@@ -15,13 +15,13 @@ if (el_name.indexOf('el-') != 0 && el_name.indexOf('fm-') != 0) {
 	el_name = `el-${el_name}`;
 }
 
-if (fs.existsSync(`${els_dir}/${el_name}`)){
-	console.log(chalk.red(`Element folder "${els_dir}/${el_name}" already exists.\n`));
+if (fs.existsSync(`${src_dir}/${el_name}`)){
+	console.log(chalk.red(`Element folder "${src_dir}/${el_name}" already exists.\n`));
 	process.exit(0);
 }
 
 console.log(chalk.green(`Creating "${el_name}" basic structure...`));
-fs.mkdirSync(`${els_dir}/${el_name}`);
+fs.mkdirSync(`${src_dir}/${el_name}`);
 
 
 const js_file = `customElements.define('${el_name}', class extends HTMLDivElement {
@@ -42,7 +42,7 @@ let files = {
 }
 
 Object.keys(files).forEach((file_name, index) => {
-	const file = `${els_dir}/${el_name}/${file_name}`;
+	const file = `${src_dir}/${el_name}/${file_name}`;
 	fs.writeFileSync(file, files[file_name]);
 	console.log(`Created ${file}`);
 });
