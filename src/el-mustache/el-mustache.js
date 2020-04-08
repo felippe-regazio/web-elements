@@ -1,4 +1,4 @@
-import 'mustache'
+import Mustache from 'mustache'
 import './el-mustache.scss';
 
 customElements.define('el-mustache', class extends HTMLDivElement {
@@ -75,7 +75,7 @@ customElements.define('el-mustache', class extends HTMLDivElement {
   render(data) {
     if (!data) data = {};
     if (!this.$template) this.$template = this.getTemplate();
-    this.innerHTML = Mustache.to_html(this.$template, data);
+    this.innerHTML = Mustache.render(this.$template, data);
     this.loaded();
   }
 
