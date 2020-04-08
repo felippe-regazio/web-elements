@@ -4,8 +4,6 @@ Extends the "IMG" HTML element and provides a "see in a box" feature if the user
 
 # Usage
 
-Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
-
 ```html
 <img is="el-imgview" src="http://picsum.photos/id/180/300" data-view="http://picsum.photos/id/180/5000"/>
 ```

@@ -7,8 +7,22 @@ const MinifyPlugin = require('babel-minify-webpack-plugin');
 const DIST_PATH = path.resolve(__dirname, 'dist');
 rimraf(path.join(DIST_PATH), () => {});
 
-module.exports = {
-    entry: glob.sync('./src/**/*.js'),
+let elements_output = {};
+let elements_list = glob.sync('./src/**/*.js');
+
+// all elements to elements.js
+elements_output['all-elements'] = elements_list;
+
+// single elements to {name}.js
+if (process.argv.includes('-p')) {
+    elements_list.map((el, index) => {
+        const name = el.split('/').slice(-1)[0];
+        elements_output[name] = el;
+    });
+}
+
+module.exports =  {
+    entry: elements_output,
     module: {
         rules: [
             {
@@ -47,7 +61,7 @@ module.exports = {
     }, 
     output: {
         path: DIST_PATH,
-        filename: 'elements.min.js',
+        filename: '[name].js',
         libraryTarget: 'umd',
         globalObject: 'this',
         libraryExport: 'default'

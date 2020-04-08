@@ -4,8 +4,6 @@ Extends the "HEADER" HTML element and provides extra features to it. The `el-hea
 
 # Usage
 
-Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
-
 ```html
 <header is="el-header" data-on:hide="" data-on:show="ex" data-autohide>
 	<span>Page Header Testing<span>

@@ -4,8 +4,6 @@ Extends the "IMG" HTML element and provides a "lazy" feature. The image will be 
 
 # Usage
 
-Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
-
 ```html
 <img is="el-lazyimg" src="http://picsum.photos/id/180/300" data-src="http://picsum.photos/id/180/2000" data-blur/>
 ```

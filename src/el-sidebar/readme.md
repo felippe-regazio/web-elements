@@ -4,8 +4,6 @@ Extends the "DIV" HTML element adding a `Sidebar` structure and behavior.
 
 # Usage
 
-Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
-
 ```html
 <div is="el-sidebar" id="sidebar1" data-right>
   <section>

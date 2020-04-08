@@ -4,8 +4,6 @@ Provides a div with Card behavior.
 
 # Usage
 
-Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
-
 ```html
 <div is="el-card">
 	<img src="http://picsum.photos/300">

@@ -1,3 +1,4 @@
+import 'mustache'
 import './el-mustache.scss';
 
 customElements.define('el-mustache', class extends HTMLDivElement {

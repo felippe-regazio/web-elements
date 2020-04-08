@@ -5,8 +5,6 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="vendor/css-normalize/normalize.css">
-    <link rel="stylesheet" type="text/css" href="elements.css">
-
     <style type="text/css">
         body {
             font-family: Helvetica;
@@ -44,15 +42,7 @@
         <h2>📌 About</h2>
 
         <p>
-            This is a Vanilla JavaScript `Custom Elements Collection`. They are Non-Autonomous - or `Built-in Custom Elements` - focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
-        </p>
-
-        <p>
-            As said by MDN: "Web Components is a suite of different technologies allowing you to create reusable custom elements — with their functionality encapsulated away from the rest of your code — and utilize them in your web apps".
-        </p>
-
-        <p>
-            Built-In Web Elements are part of the "Web Components" specs. They allow us to extend a standard HTML components and give it new powers. That means we don't rewrite an entire component just to add an accordion feature, we extend an existent HTML element and give it the accordion behavior. The use is very simple: just an HTML tag with a `is="my-element"` attribute telling how the tag will be extended giving it new super powers. Built-in custom elements are a specification part of the Web Components official spec. You can check the <a href="https://github.com/felippe-regazio/web-elements" target="_blank">Github Documentation</a> of this collection for further information.
+            This is a Vanilla JavaScript `Non-Autonomous Elements Collection` focused on behavior with a minimalistic approach. Each element has a single purpose, extends a Standard HTML Element and has a basic API.
         </p>
 
         <div style="text-align:center">
@@ -62,57 +52,9 @@
             </a>
         </div>
 
-        <h2>📌 Motivation</h2>
-
-        <p>
-            This Elements Collection to avoid painfully repetition of JS and CSS coding common of UI elements structures and behavior with a minimalistic approach:
-            <br/>
-
-            <ul>
-                <li>
-                    <p>
-                        <b>Almost no style</b> (behavior driven style), letting you free to add your visual identity.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <b>Single purpose elements</b>. Every element must do only one thing. Commonly it encapsulates complex behaviors.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <b>Simplicity</b>. The code is very simple. The largest component source has 100 lines of code. There is no complex multi-purpose largely configurable element.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <b>Agnostic</b>. That means no frameworks required. You can use them anywhere, just add the `is="el-name"` attribute to give new powers to a standard HTML element.
-                    </p>
-                </li>
-            </ul>
-        </p>
-
-        <h2>📌 Elements List & Examples</h2>
-
-        <p>You can check all the elements with examples clicking <a href="examples.html" target="_blank"><b>HERE</b></a></p>          
-
         <h2>📌 Getting Started</h2>
 
-        <p>You have some options to add the components on your project:</p>
-
-        <ul>
-            <li>
-                <h4>By adding the `elements.js` and `elements.css` bundle on your document. This will add all the elements.</h4>
-            </li>
-            <li>
-                <h4>By adding "à la carte". You will add the JS and CSS files only for the elements that you want. You find this files on the "elements" directory of the project.</h4>
-            </li>
-            <li>
-                <h4>Importing or requiring the desired element. You can import or require the `elements.js` and `elements.css` from the project root, or a single element from the "elements" directory.</h4>
-            </li>
-        </ul>
-
-        <p>Obs: The `el-mustache` element has a dependency. Read the element docs for further information.</p>
+        <p>Add the `dist/{element-name}.js` element file to your page, or add `dist/all-elements.js ` to load all the elements. Now you are ready to go.</p>
 
         <h2>📌 Polyfill</h2>
 
@@ -136,26 +78,12 @@
         <h2>📌 Documentation</h2>
 
         <p>Click <a href="https://github.com/felippe-regazio/web-elements/tree/master/source"><b>HERE</b></a> to go to the github elements folder and click on the element folder that you want to read the doc.</p>
-        <p>Every element has its own readme.</p>          
-
-        <h2>📌 Benefits</h2>
-
-        <ul>
-            <li>Vanilla JS. No dependencies. No framework.</li>
-            <li>Add all elements, or only those that you will need.</li>
-            <li>Behavior driven, you are free to add your styles.</li>
-            <li>No Shadow-DOM</li>
-            <li>Inherit from Standards, inheriting all the common elements structure</li>
-            <li>Semantic HTML with no strange custom tag names</li>
-            <li>SEO Friendly and Accessibility friendly</li>
-            <li>Reusable and Minimal</li>
-            <li>Provides separation of concerns between data, behavior and style.</li>
-        </ul>
+        <p>Every element has its own README.</p>          
 
         <h2>📌 Styling</h2>
 
         <p>
-            This is a standard HTML elements extended, so you can freely style it, apply your own classes, ids, attributes, etc. You can manage/change the Lightbox size, position, z-index and everything else by CSS. You may use the [is="{element-name}"] element selector to target the element on your CSS.
+            As the elements are focused on Behavior, they have a simple and minimalistic built-in style. The idea is keep the user free to add its own visual identity. As the elements are add on the root context, there is no hassle to style it. You just add your styles. A cool thing about it is that you can also use the `[is]` attribute to target the elements on css. For example:
         </p>
 
 <pre><code>
@@ -192,6 +120,6 @@
 
     <script type="text/javascript" src="vendor/polyfill-built-in-element/min.js"></script>
     <script type="text/javascript" src="vendor/mustache-js/mustache.min.js"></script>
-    <script type="text/javascript" src="elements.js"></script>
+    <script type="text/javascript" src="dist/all-elements.js"></script>
   </body>
 </html>

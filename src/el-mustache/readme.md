@@ -2,15 +2,7 @@
 
 This element provides a HTML DIV which has a built-in `Mustache Template Engine`. The element accepts a json as attribute, then parse it allowing the data to be used on the DIV content using the Mustache engine.
 
-# Dependency
-
-This elements depends of the `mustache.js` template engine. You must add the mustache.js script before this element js file on your document. You can find a mustache.js script on the vendor folder, or here:
-
-Its highly recommend for you to read the `Mustache.js Documentation`. Once you correctly setup the element, you can use all the mustache.js features inside your `el-mustache` div - Mustache Doc: https://github.com/janl/mustache.js
-
 # Usage
-
-Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
 
 1. The root element must be a div with `is="el-mustache"`.
 2. The element must have the attribute `data-json` with data in json format.

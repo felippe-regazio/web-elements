@@ -4,23 +4,20 @@ Extends the "INPUT" HTML element and provides a image upload box with previewer 
 
 # Usage
 
-Add the `elements.js` and `elements.css` source files from the project root on your document - this will enable all elements.  
-Or you can load the JS and CSS files for a single element from the `elements` directory.
-
 ```html
-	<input 
-			is="fm-imgprev" 
-			type="file" 
-			name="image_input" 
-			data-height="300px" 
-			data-width="300px"
-			data-placeholder="Send Images"
-			data-fake-btn="Send Image"
-			data-fake-btn-classes="test btn classes"
-			data-max-size="3"
-			data-min-size="1"
-			data-max-size-error="Maximum Size 3MB"
-			data-min-size-error="Minimum Size 1MB"/>
+<input 
+		is="fm-imgprev" 
+		type="file" 
+		name="image_input" 
+		data-height="300px" 
+		data-width="300px"
+		data-placeholder="Send Images"
+		data-fake-btn="Send Image"
+		data-fake-btn-classes="test btn classes"
+		data-max-size="3"
+		data-min-size="1"
+		data-max-size-error="Maximum Size 3MB"
+		data-min-size-error="Minimum Size 1MB"/>
 ```
 
 # Structure

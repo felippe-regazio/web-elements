@@ -4,8 +4,6 @@ Provides a single accordion element which can be nested or arranged with other o
 
 # Usage
 
-Add the `elements.js` and `elements.css` bundle files from the project root on your document - this will enable all elements. Or you can load the JS and CSS files for a single element from the `elements` directory.
-
 The root element must be a div with `is="el-accordion"` attribute and a `data-summary` containing the Accordion title.
 All the direct children of the div[is="el-accordion"] will be wrapped in a collapsible/expandable holder.
 

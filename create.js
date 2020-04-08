@@ -24,7 +24,9 @@ console.log(chalk.green(`Creating "${el_name}" basic structure...`));
 fs.mkdirSync(`${src_dir}/${el_name}`);
 
 
-const js_file = `customElements.define('${el_name}', class extends HTMLDivElement {
+const js_file = `import './${el_name}.scss';
+
+customElements.define('${el_name}', class extends HTMLDivElement {
 
 	constructor () {
 		super();
@@ -35,9 +37,13 @@ const js_file = `customElements.define('${el_name}', class extends HTMLDivElemen
 	}
 }, {extends: 'div'});`;
 
+const scss_file = `[is="${el_name}"] {
+	
+}`;
+
 let files = {
 	[`${el_name}.js`]: js_file,
-	[`${el_name}.scss`]: "",
+	[`${el_name}.scss`]: scss_file,
 	"readme.md": ""
 }
 
