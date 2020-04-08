@@ -28,13 +28,13 @@ const js_file = `import './${el_name}.scss';
 
 customElements.define('${el_name}', class extends HTMLDivElement {
 
-	constructor () {
-		super();
-	}
+  constructor () {
+    super();
+  }
 
-	connectedCallback () {
-		console.log('Hello World');
-	}
+  connectedCallback () {
+    console.log('Hello World');
+  }
 }, {extends: 'div'});`;
 
 const scss_file = `[is="${el_name}"] {
