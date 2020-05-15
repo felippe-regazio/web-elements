@@ -71,7 +71,7 @@ npm run build
 Start the Dev mode
 
 ```
-npm run build
+npm run dev
 ```
 
 Dev mode & Autofix Linter
