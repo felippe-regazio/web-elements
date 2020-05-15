@@ -21,7 +21,7 @@ You must add the element HTML `tag` setting the `is` attribute to the desired el
 </div>
 ```
 
-<p>Note the `is` attribute determine that the div will have the "accordion" behavior. That could be an image so, like `<img is="el-lazyimg" ... >`. See the docs for a complete list and proper usage of each element</p>
+<p>Note the `is` attribute determine that the div will have the "accordion" behavior. See the docs for a complete list and proper usage of each element</p>
 
 ## Examples
 
